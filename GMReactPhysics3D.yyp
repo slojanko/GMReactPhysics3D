@@ -32,8 +32,10 @@
     "IDEVersion": "2023.1.0.58",
   },
   "resources": [
-    {"id":{"name":"Object1","path":"objects/Object1/Object1.yy",},"order":0,},
+    {"id":{"name":"types","path":"scripts/types/types.yy",},"order":0,},
+    {"id":{"name":"Demo","path":"objects/Demo/Demo.yy",},"order":0,},
     {"id":{"name":"ReactPhysics3D","path":"extensions/ReactPhysics3D/ReactPhysics3D.yy",},"order":0,},
+    {"id":{"name":"crate_spr","path":"sprites/crate_spr/crate_spr.yy",},"order":0,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
   "RoomOrderNodes": [
