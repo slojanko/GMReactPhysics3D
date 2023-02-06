@@ -1,5 +1,5 @@
 if (mouse_check_button(mb_left)) {
-	Update(world, delta_time / 1000000);
+	UpdatePhysicsWorld(world, delta_time / 1000000);
 }
 
 //xx = window_mouse_get_x();
