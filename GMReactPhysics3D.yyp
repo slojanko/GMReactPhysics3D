@@ -35,7 +35,7 @@
     {"id":{"name":"target_spr","path":"sprites/target_spr/target_spr.yy",},"order":0,},
     {"id":{"name":"types","path":"scripts/types/types.yy",},"order":0,},
     {"id":{"name":"Demo","path":"objects/Demo/Demo.yy",},"order":0,},
-    {"id":{"name":"ReactPhysics3D","path":"extensions/ReactPhysics3D/ReactPhysics3D.yy",},"order":0,},
+    {"id":{"name":"GMReactPhysics3D","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},"order":0,},
     {"id":{"name":"crate_spr","path":"sprites/crate_spr/crate_spr.yy",},"order":0,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],

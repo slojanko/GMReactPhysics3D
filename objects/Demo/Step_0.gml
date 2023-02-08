@@ -1,5 +1,6 @@
-if (mouse_check_button(mb_left)) {
-	UpdatePhysicsWorld(world, delta_time / 1000000);
+if (mouse_check_button_pressed(mb_left)) {
+	update_start_time = get_timer();
+	UpdatePhysicsWorldAsync(world, 1 / 60);
 }
 
 //xx = window_mouse_get_x();

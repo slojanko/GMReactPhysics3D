@@ -1,5 +1,6 @@
 gpu_set_zwriteenable(true);
 gpu_set_ztestenable(true);
+show_debug_overlay(true);
 
 view_enabled = true;
 view_set_visible(0, true);
@@ -22,7 +23,8 @@ vertex_format_add_texcoord();
 vertex_format_add_color();
 format = vertex_format_end();
 
-vb_plane = model_build_cube(-1, -1, -1, 1, 1, 1, 1, 1);
+cube = model_build_cube(-1, -1, -1, 1, 1, 1, 1, 1);
+raycast_cube = model_build_cube(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 1, 1);
 
 world = CreatePhysicsWorld()
 SetIterationsSolver(world, 5, 3);
@@ -31,16 +33,18 @@ ground = CreateRigidbody(world, 0, 0, 0, 0, 0, 0);
 SetType(ground, BodyType.staticc);
 AddCollider(ground, ground_shape);
 
+cube_count = 4096;
 box_shape = CreateBoxShape(1, 1, 1);
-box_list = ds_list_create();
-cube_count = 1024;
+box_array =  array_create(cube_count, 0);
+box_transforms = array_create(cube_count, 0);
 
 for(var i = 0; i < cube_count; i++) {
-	var dist = random_range(10, 35);
+	var dist = random_range(10, 90);
 	var dir = 15 + i * 30;
 	var height = 5 + i / 15;
 	var box = CreateRigidbody(world, lengthdir_x(dist, dir), lengthdir_y(dist, dir), height, 0, 0, 0);
 	AddCollider(box, box_shape);
-	
-	ds_list_add(box_list, box);
+	box_array[i] = box;
 }
+
+updated_once = false;
