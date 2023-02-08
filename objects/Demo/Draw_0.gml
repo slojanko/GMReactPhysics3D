@@ -1,9 +1,9 @@
-if (updated_once == false) {
-	return;
-}
+//if (updated_once == false) {
+//	return;
+//}
 
 for(var i = 0; i < cube_count; i++) {
-	matrix_set(matrix_world, box_transforms[i]);
+	matrix_set(matrix_world, GetTransform(box_array[i]));
 	vertex_submit(cube, pr_trianglelist, sprite_get_texture(crate_spr, 0));
 }
 
