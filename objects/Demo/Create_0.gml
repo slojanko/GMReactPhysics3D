@@ -39,7 +39,7 @@ box_array =  array_create(cube_count, 0);
 box_transforms = array_create(cube_count, 0);
 
 for(var i = 0; i < cube_count; i++) {
-	var dist = random_range(10, 90);
+	var dist = random_range(10, 60);
 	var dir = 15 + i * 30;
 	var height = 5 + i / 15;
 	var box = CreateRigidbody(world, lengthdir_x(dist, dir), lengthdir_y(dist, dir), height, 0, 0, 0);
