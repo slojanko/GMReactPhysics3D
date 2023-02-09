@@ -17,14 +17,13 @@ view_set_camera(0, camera);
 mLookat = matrix_build_lookat(xx,yy,zz, 0, 0, 0 ,0, 0, 1);
 camera_set_view_mat(view_camera[0], mLookat);
 
-vertex_format_begin();
-vertex_format_add_position_3d();
-vertex_format_add_texcoord();
-vertex_format_add_color();
-format = vertex_format_end();
+cube = model_build_cube(-1, -1, -1, 1, 1, 11);
+raycast_cube = model_build_cube(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5);
 
-cube = model_build_cube(-1, -1, -1, 1, 1, 1, 1, 1);
-raycast_cube = model_build_cube(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 1, 1);
+// Physics setup
+shared_buffer = buffer_create(65536, buffer_fixed, 1);
+//shared_array = array_create(65536)
+//Init(buffer_get_address(shared_buffer));
 
 world = CreatePhysicsWorld()
 SetIterationsSolver(world, 5, 3);
@@ -46,5 +45,3 @@ for(var i = 0; i < cube_count; i++) {
 	AddCollider(box, box_shape);
 	box_array[i] = box;
 }
-
-updated_once = false;

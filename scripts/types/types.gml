@@ -4,87 +4,86 @@ enum BodyType {
 	dynamic = 2,
 }
 
-function model_build_cube(argument0, argument1, argument2, argument3, argument4, argument5, argument6, argument7) {
-	var x1 = argument0,
-	    y1 = argument1,
-	    z1 = argument2,
-	    x2 = argument3,
-	    y2 = argument4,
-	    z2 = argument5,
-	    hr = argument6,
-	    vr = argument7,
-	    vb = vertex_create_buffer();
+vertex_format_begin();
+vertex_format_add_position_3d();
+vertex_format_add_texcoord();
+vertex_format_add_color();
+global.format = vertex_format_end();
 
-	/* Prepare VBO */
-	vertex_begin(vb, format);
-
-	/* Top */
-	vertex_default(vb, x1, y1, z2, 0, 0, 1, 0, 0, c_white, 1);
-	vertex_default(vb, x2, y1, z2, 0, 0, 1, hr, 0, c_white, 1);
-	vertex_default(vb, x1, y2, z2, 0, 0, 1, 0, vr, c_white, 1);
-
-	vertex_default(vb, x2, y1, z2, 0, 0, 1, hr, 0, c_white, 1);
-	vertex_default(vb, x2, y2, z2, 0, 0, 1, hr, vr, c_white, 1);
-	vertex_default(vb, x1, y2, z2, 0, 0, 1, 0, vr, c_white, 1);
-
-	/* Bottom */
-	vertex_default(vb, x1, y2, z1, 0, 0, -1, 0, vr, c_white, 1);
-	vertex_default(vb, x2, y1, z1, 0, 0, -1, hr, 0, c_white, 1);
-	vertex_default(vb, x1, y1, z1, 0, 0, -1, 0, 0, c_white, 1);
-
-	vertex_default(vb, x1, y2, z1, 0, 0, -1, 0, vr, c_white, 1);
-	vertex_default(vb, x2, y2, z1, 0, 0, -1, hr, vr, c_white, 1);
-	vertex_default(vb, x2, y1, z1, 0, 0, -1, hr, 0, c_white, 1);
-
-	/* Front */
-	vertex_default(vb, x1, y2, z2, 0, 1, 0, 0, vr, c_white, 1);
-	vertex_default(vb, x2, y2, z1, 0, 1, 0, hr, 0, c_white, 1);
-	vertex_default(vb, x1, y2, z1, 0, 1, 0, 0, 0, c_white, 1);
-
-	vertex_default(vb, x1, y2, z2, 0, 1, 0, 0, vr, c_white, 1);
-	vertex_default(vb, x2, y2, z2, 0, 1, 0, hr, vr, c_white, 1);
-	vertex_default(vb, x2, y2, z1, 0, 1, 0, hr, 0, c_white, 1);
-
-	/* Back */
-	vertex_default(vb, x1, y1, z1, 0, -1, 0, 0, 0, c_white, 1);
-	vertex_default(vb, x2, y1, z1, 0, -1, 0, hr, 0, c_white, 1);
-	vertex_default(vb, x1, y1, z2, 0, -1, 0, 0, vr, c_white, 1);
-
-	vertex_default(vb, x2, y1, z1, 0, -1, 0, hr, 0, c_white, 1);
-	vertex_default(vb, x2, y1, z2, 0, -1, 0, hr, vr, c_white, 1);
-	vertex_default(vb, x1, y1, z2, 0, -1, 0, 0, vr, c_white, 1);
-
-	/* Right */
-	vertex_default(vb, x2, y1, z1, 1, 0, 0, 0, 0, c_white, 1);
-	vertex_default(vb, x2, y2, z1, 1, 0, 0, hr, 0, c_white, 1);
-	vertex_default(vb, x2, y1, z2, 1, 0, 0, 0, vr, c_white, 1);
-
-	vertex_default(vb, x2, y2, z1, 1, 0, 0, hr, 0, c_white, 1);
-	vertex_default(vb, x2, y2, z2, 1, 0, 0, hr, vr, c_white, 1);
-	vertex_default(vb, x2, y1, z2, 1, 0, 0, 0, vr, c_white, 1);
-
-	/* Left */
-	vertex_default(vb, x1, y1, z2, -1, 0, 0, 0, vr, c_white, 1);
-	vertex_default(vb, x1, y2, z1, -1, 0, 0, hr, 0, c_white, 1);
-	vertex_default(vb, x1, y1, z1, -1, 0, 0, 0, 0, c_white, 1);
-
-	vertex_default(vb, x1, y1, z2, -1, 0, 0, 0, vr, c_white, 1);
-	vertex_default(vb, x1, y2, z2, -1, 0, 0, hr, vr, c_white, 1);
-	vertex_default(vb, x1, y2, z1, -1, 0, 0, hr, 0, c_white, 1);
-
-	/* Finalize VBO */
-	vertex_end(vb);
-	vertex_freeze(vb);
-
-	return vb;
+function random_rgb(min_value, max_value) {
+	return make_color_rgb(irandom_range(min_value, max_value), irandom_range(min_value, max_value), irandom_range(min_value, max_value));
 }
 
-function vertex_default(argument0, argument1, argument2, argument3, argument4, argument5, argument6, argument7, argument8, argument9, argument10) {
+function model_build_cube(x1, y1, z1, x2, y2, z2) {
+	var buffer = vertex_create_buffer();
+	vertex_begin(buffer, global.format);
+
+	/* Top */
+	vertex_default(buffer, x1, y1, z2, 0, 0, random_rgb(170, 255), 1);
+	vertex_default(buffer, x2, y1, z2, 1, 0, random_rgb(170, 255), 1);
+	vertex_default(buffer, x1, y2, z2, 0, 1, random_rgb(170, 255), 1);
+
+	vertex_default(buffer, x2, y1, z2, 1, 0, random_rgb(170, 255), 1);
+	vertex_default(buffer, x2, y2, z2, 1, 1, random_rgb(170, 255), 1);
+	vertex_default(buffer, x1, y2, z2, 0, 1, random_rgb(170, 255), 1);
+
+	/* Bottom */
+	vertex_default(buffer, x1, y2, z1, 0, 1, random_rgb(170, 255), 1);
+	vertex_default(buffer, x2, y1, z1, 1, 0, random_rgb(170, 255), 1);
+	vertex_default(buffer, x1, y1, z1, 0, 0, random_rgb(170, 255), 1);
+
+	vertex_default(buffer, x1, y2, z1, 0, 1, random_rgb(170, 255), 1);
+	vertex_default(buffer, x2, y2, z1, 1, 1, random_rgb(170, 255), 1);
+	vertex_default(buffer, x2, y1, z1, 1, 0, random_rgb(170, 255), 1);
+
+	/* Front */
+	vertex_default(buffer, x1, y2, z2, 0, 1, random_rgb(170, 255), 1);
+	vertex_default(buffer, x2, y2, z1, 1, 0, random_rgb(170, 255), 1);
+	vertex_default(buffer, x1, y2, z1, 0, 0, random_rgb(170, 255), 1);
+
+	vertex_default(buffer, x1, y2, z2, 0, 1, random_rgb(170, 255), 1);
+	vertex_default(buffer, x2, y2, z2, 1, 1, random_rgb(170, 255), 1);
+	vertex_default(buffer, x2, y2, z1, 1, 0, random_rgb(170, 255), 1);
+
+	/* Back */
+	vertex_default(buffer, x1, y1, z1, 0, 0, random_rgb(170, 255), 1);
+	vertex_default(buffer, x2, y1, z1, 1, 0, random_rgb(170, 255), 1);
+	vertex_default(buffer, x1, y1, z2, 0, 1, random_rgb(170, 255), 1);
+
+	vertex_default(buffer, x2, y1, z1, 1, 0, random_rgb(170, 255), 1);
+	vertex_default(buffer, x2, y1, z2, 1, 1, random_rgb(170, 255), 1);
+	vertex_default(buffer, x1, y1, z2, 0, 1, random_rgb(170, 255), 1);
+
+	/* Right */
+	vertex_default(buffer, x2, y1, z1, 0, 0, random_rgb(170, 255), 1);
+	vertex_default(buffer, x2, y2, z1, 1, 0, random_rgb(170, 255), 1);
+	vertex_default(buffer, x2, y1, z2, 0, 1, random_rgb(170, 255), 1);
+
+	vertex_default(buffer, x2, y2, z1, 1, 0, random_rgb(170, 255), 1);
+	vertex_default(buffer, x2, y2, z2, 1, 1, random_rgb(170, 255), 1);
+	vertex_default(buffer, x2, y1, z2, 0, 1, random_rgb(170, 255), 1);
+
+	/* Left */
+	vertex_default(buffer, x1, y1, z2, 0, 1, random_rgb(170, 255), 1);
+	vertex_default(buffer, x1, y2, z1, 1, 0, random_rgb(170, 255), 1);
+	vertex_default(buffer, x1, y1, z1, 0, 0, random_rgb(170, 255), 1);
+
+	vertex_default(buffer, x1, y1, z2, 0, 1, random_rgb(170, 255), 1);
+	vertex_default(buffer, x1, y2, z2, 1, 1, random_rgb(170, 255), 1);
+	vertex_default(buffer, x1, y2, z1, 1, 0, random_rgb(170, 255), 1);
+
+	vertex_end(buffer);
+	vertex_freeze(buffer);
+
+	return buffer;
+}
+
+function vertex_default(buffer, px, py, pz, tx, ty, c, a) {
 	gml_pragma("forceinline");
 
-	vertex_position_3d(argument0, argument1, argument2, argument3);
-	vertex_texcoord(argument0, argument7, argument8);
-	vertex_colour(argument0, argument9, argument10);
+	vertex_position_3d(buffer, px, py, pz);
+	vertex_texcoord(buffer, tx, ty);
+	vertex_colour(buffer, c, a);
 }
 
 function convert_2d_to_3d_cam(camera, _x, _y)
