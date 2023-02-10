@@ -45,6 +45,8 @@
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"SetConvexMeshShapeScale","argCount":0,"args":[],"documentation":"","externalName":"","help":"","hidden":false,"kind":1,"returnType":1,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"CreateSphereShape","argCount":0,"args":[],"documentation":"","externalName":"","help":"","hidden":false,"kind":1,"returnType":1,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"DestroySphereShape","argCount":0,"args":[],"documentation":"","externalName":"","help":"","hidden":false,"kind":1,"returnType":1,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"CreateCapsuleShape","argCount":0,"args":[],"documentation":"","externalName":"","help":"","hidden":false,"kind":1,"returnType":1,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"DestroyCapsuleShape","argCount":0,"args":[],"documentation":"","externalName":"","help":"","hidden":false,"kind":1,"returnType":1,},
       ],"init":"","kind":1,"order":[
         {"name":"Init","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
         {"name":"CreatePhysicsWorld","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
@@ -68,6 +70,8 @@
         {"name":"DestroyBoxShape","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
         {"name":"CreateSphereShape","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
         {"name":"DestroySphereShape","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
+        {"name":"CreateCapsuleShape","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
+        {"name":"DestroyCapsuleShape","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
         {"name":"CreateHeightFieldShape","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
         {"name":"DestroyHeightFieldShape","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
         {"name":"SetConcaveShapeScale","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
