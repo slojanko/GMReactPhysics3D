@@ -40,6 +40,8 @@
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"DestroyHeightFieldShape","argCount":0,"args":[],"documentation":"","externalName":"","help":"","hidden":false,"kind":1,"returnType":1,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"SetConcaveShapeScale","argCount":0,"args":[],"documentation":"","externalName":"","help":"","hidden":false,"kind":1,"returnType":1,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"UpdateRigidbodyIntertiaAndCenterOfMass","argCount":0,"args":[],"documentation":"","externalName":"","help":"","hidden":false,"kind":1,"returnType":1,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"SetPhysicsWorldGravity","argCount":0,"args":[],"documentation":"","externalName":"","help":"","hidden":false,"kind":1,"returnType":1,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"SetPhysicsWorldGravityEnabled","argCount":0,"args":[],"documentation":"","externalName":"","help":"","hidden":false,"kind":1,"returnType":1,},
       ],"init":"","kind":1,"order":[
         {"name":"Init","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
         {"name":"CreatePhysicsWorld","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
@@ -47,6 +49,8 @@
         {"name":"UpdatePhysicsWorld","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
         {"name":"UpdatePhysicsWorldAsync","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
         {"name":"RaycastPhysicsWorld","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
+        {"name":"SetPhysicsWorldGravity","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
+        {"name":"SetPhysicsWorldGravityEnabled","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
         {"name":"SetPhysicsWorldIterationsSolver","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
         {"name":"CreateCollisionBody","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
         {"name":"DestroyCollisionBody","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},

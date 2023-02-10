@@ -40,7 +40,7 @@ if (mouse_check_button_pressed(mb_left)) {
 }
 
 if (started) {
-	UpdatePhysicsWorld(world, 1 / 60);
+	UpdatePhysicsWorld(world, delta_time / 1000000);
 }
 
 //if(mouse_check_button_pressed(mb_right)) {

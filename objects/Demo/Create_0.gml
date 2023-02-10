@@ -25,6 +25,7 @@ shared_buffer = buffer_create(65536, buffer_fixed, 1);
 Init(buffer_get_address(shared_buffer));
 
 world = CreatePhysicsWorld();
+SetPhysicsWorldGravity(world, 0.0, 0.0, -9.81);
 SetPhysicsWorldIterationsSolver(world, 4, 1);
 
 ground_model = vertex_create_buffer();
