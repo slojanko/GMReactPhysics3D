@@ -35,7 +35,13 @@ if (keyboard_check(ord("E"))) {
 	cz += move_speed;
 }
 
-UpdatePhysicsWorld(world, 1 / 60);
+if (mouse_check_button_pressed(mb_left)) {
+	started = true;	
+}
+
+if (started) {
+	UpdatePhysicsWorld(world, 1 / 60);
+}
 
 //xx = window_mouse_get_x();
 //mLookat = matrix_build_lookat(xx,yy,zz, xx, 0, 0 ,0, 0, 1);

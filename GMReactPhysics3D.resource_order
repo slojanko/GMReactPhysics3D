@@ -21,6 +21,6 @@
     {"name":"GMReactPhysics3D","order":1,"path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
     {"name":"ground_spr","order":3,"path":"sprites/ground_spr/ground_spr.yy",},
     {"name":"heightmap_spr","order":2,"path":"sprites/heightmap_spr/heightmap_spr.yy",},
-    {"name":"heightmap_bytes","order":2,"path":"scripts/heightmap_bytes/heightmap_bytes.yy",},
+    {"name":"heightmap_utils","order":2,"path":"scripts/heightmap_utils/heightmap_utils.yy",},
   ],
 }

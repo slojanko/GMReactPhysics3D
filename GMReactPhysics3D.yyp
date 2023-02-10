@@ -40,7 +40,7 @@
     {"id":{"name":"ground_spr","path":"sprites/ground_spr/ground_spr.yy",},"order":0,},
     {"id":{"name":"box_spr","path":"sprites/box_spr/box_spr.yy",},"order":0,},
     {"id":{"name":"heightmap_spr","path":"sprites/heightmap_spr/heightmap_spr.yy",},"order":0,},
-    {"id":{"name":"heightmap_bytes","path":"scripts/heightmap_bytes/heightmap_bytes.yy",},"order":0,},
+    {"id":{"name":"heightmap_utils","path":"scripts/heightmap_utils/heightmap_utils.yy",},"order":0,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
   "RoomOrderNodes": [
