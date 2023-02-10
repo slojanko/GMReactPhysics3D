@@ -59,15 +59,15 @@ for(var yy = 0; yy < 128; yy++) {
 vertex_end(ground_model);
 vertex_freeze(ground_model);
 
-ground_shape = CreateHeightFieldShape(128 / 4, 128 / 4, 0, 255 * 0.04, buffer_get_address(ground_buffer), HeightDataType.HEIGHT_DOUBLE_TYPE);
-SetConcaveShapeScale(ground_shape, 4.0, 4.0, 1);
+ground_shape = CreateBoxShape(100, 100, 5); // CreateHeightFieldShape(128 / 4, 128 / 4, 0, 255 * 0.04, buffer_get_address(ground_buffer), HeightDataType.HEIGHT_DOUBLE_TYPE);
+// SetConcaveShapeScale(ground_shape, 4.0, 4.0, 1);
 ground_texture = sprite_get_texture(ground_spr, 0);
 ground = CreateRigidbody(world, 0, 0, 0, 0, 0, 0);
 SetRigidbodyType(ground, BodyType.STATIC);
 AddCollider(ground, ground_shape, 0, 0, 0, 0, 0, 0);
 
-cube_count = 1024;
-box_shape = CreateBoxShape(1, 1, 1);
+cube_count = 4096;
+box_shape = CreateSphereShape(1);
 box_texture = sprite_get_texture(box_spr, 0)
 box_array =  array_create(cube_count, 0);
 
