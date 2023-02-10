@@ -27,6 +27,7 @@ Init(buffer_get_address(shared_buffer));
 world = CreatePhysicsWorld();
 SetPhysicsWorldGravity(world, 0.0, 0.0, -9.81);
 SetPhysicsWorldIterationsSolver(world, 4, 1);
+gravity_down = true;
 
 ground_model = vertex_create_buffer();
 vertex_begin(ground_model, global.format);

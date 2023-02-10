@@ -43,6 +43,12 @@ if (started) {
 	UpdatePhysicsWorld(world, delta_time / 1000000);
 }
 
+if (mouse_check_button_pressed(mb_right)) {
+	gravity_down = !gravity_down;
+	
+	SetPhysicsWorldGravity(world, 0.0, 0.0, gravity_down ? -9.81 : 9.81);
+}
+
 //if(mouse_check_button_pressed(mb_right)) {
 //	var sumDouble = 0;
 //	var start = get_timer();

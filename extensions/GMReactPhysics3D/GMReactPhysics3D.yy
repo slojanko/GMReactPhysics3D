@@ -42,6 +42,7 @@
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"UpdateRigidbodyIntertiaAndCenterOfMass","argCount":0,"args":[],"documentation":"","externalName":"","help":"","hidden":false,"kind":1,"returnType":1,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"SetPhysicsWorldGravity","argCount":0,"args":[],"documentation":"","externalName":"","help":"","hidden":false,"kind":1,"returnType":1,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"SetPhysicsWorldGravityEnabled","argCount":0,"args":[],"documentation":"","externalName":"","help":"","hidden":false,"kind":1,"returnType":1,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"SetConvexMeshShapeScale","argCount":0,"args":[],"documentation":"","externalName":"","help":"","hidden":false,"kind":1,"returnType":1,},
       ],"init":"","kind":1,"order":[
         {"name":"Init","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
         {"name":"CreatePhysicsWorld","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
@@ -66,6 +67,7 @@
         {"name":"CreateHeightFieldShape","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
         {"name":"DestroyHeightFieldShape","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
         {"name":"SetConcaveShapeScale","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
+        {"name":"SetConvexMeshShapeScale","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
       ],"origname":"","ProxyFiles":[],"uncompress":false,"usesRunnerInterface":true,},
   ],
   "gradleinject": "",
