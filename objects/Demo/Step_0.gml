@@ -43,6 +43,27 @@ if (started) {
 	UpdatePhysicsWorld(world, 1 / 60);
 }
 
+//if(mouse_check_button_pressed(mb_right)) {
+//	var sumDouble = 0;
+//	var start = get_timer();
+//	for(var i = 0; i < 10000000; i++) {
+//		sumDouble += box_array[i % cube_count];
+//	}
+//	show_debug_message(sumDouble);
+//	show_debug_message((get_timer() - start) / 1000000);
+
+
+
+//	var sumInt = int64(0);
+//	start = get_timer();
+//	var limit = int64(10000000);
+//	for(var i = int64(0); i < limit; i++) {
+//		sumInt += box_array[i % cube_count];
+//	}
+//	show_debug_message(sumInt);
+//	show_debug_message((get_timer() - start) / 1000000);
+//}
+
 //xx = window_mouse_get_x();
 //mLookat = matrix_build_lookat(xx,yy,zz, xx, 0, 0 ,0, 0, 1);
 //camera_set_view_mat(view_camera[0], mLookat);
