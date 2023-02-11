@@ -43,6 +43,24 @@ if (started) {
 	UpdatePhysicsWorld(world, delta_time / 1000000);
 }
 
+var limit_dir = keyboard_check(vk_right) - keyboard_check(vk_left);
+var limit = limit_dir != 0;
+var left_limit = -degtorad(50) * (limit_dir < 0);
+var right_limit = degtorad(50) * (limit_dir > 0);
+SetHingeJointMinMaxAngleLimit(wheel_front_left_steer_joint, left_limit, right_limit);
+SetHingeJointMinMaxAngleLimit(wheel_front_right_steer_joint, left_limit, right_limit);
+
+SetHingeJointMotorSpeedTorque(wheel_front_left_steer_joint, -limit_dir * 2, 1000);
+SetHingeJointMotorSpeedTorque(wheel_front_right_steer_joint, -limit_dir * 2, 1000);
+
+HingeJointEnableMotor(wheel_front_left_steer_joint, limit);
+HingeJointEnableMotor(wheel_front_right_steer_joint, limit);
+
+// show_debug_message("{0} {1} {2} {3}", limit_dir, limit, left_limit, right_limit);
+
+HingeJointEnableMotor(wheel_back_left_wheel_joint, keyboard_check(vk_up));
+HingeJointEnableMotor(wheel_back_right_wheel_joint, keyboard_check(vk_up));
+
 //if(mouse_check_button_pressed(mb_right)) {
 //	var sumDouble = 0;
 //	var start = get_timer();
