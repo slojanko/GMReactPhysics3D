@@ -2,7 +2,7 @@ var mLookat = matrix_build_lookat(cx, cy, cz, cx + dcos(cdir), cy - dsin(cdir), 
 camera_set_view_mat(camera, mLookat);
 camera_apply(camera);
 
-matrix_set(matrix_world, matrix_build(-64, -64, -255 * 0.04 * 0.5, 0, 0, 0, 1, 1, 1));
+matrix_set(matrix_world, matrix_build(-64, -64, -255 * 0.12 * 0.5, 0, 0, 0, 1, 1, 1));
 vertex_submit(ground_model, pr_trianglelist, ground_texture);
 
 for(var i = 0; i < cube_count; i++) {

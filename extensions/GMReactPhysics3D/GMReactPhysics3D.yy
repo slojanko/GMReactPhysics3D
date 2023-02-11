@@ -47,6 +47,8 @@
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"DestroySphereShape","argCount":0,"args":[],"documentation":"","externalName":"","help":"","hidden":false,"kind":1,"returnType":1,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"CreateCapsuleShape","argCount":0,"args":[],"documentation":"","externalName":"","help":"","hidden":false,"kind":1,"returnType":1,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"DestroyCapsuleShape","argCount":0,"args":[],"documentation":"","externalName":"","help":"","hidden":false,"kind":1,"returnType":1,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"SetColliderCollisionCategoryBits","argCount":0,"args":[],"documentation":"","externalName":"","help":"","hidden":false,"kind":1,"returnType":1,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"SetColliderCollideWithMaskBits","argCount":0,"args":[],"documentation":"","externalName":"","help":"","hidden":false,"kind":1,"returnType":1,},
       ],"init":"","kind":1,"order":[
         {"name":"Init","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
         {"name":"CreatePhysicsWorld","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
@@ -62,6 +64,8 @@
         {"name":"SetTransform","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
         {"name":"GetTransform","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
         {"name":"AddCollider","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
+        {"name":"SetColliderCollisionCategoryBits","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
+        {"name":"SetColliderCollideWithMaskBits","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
         {"name":"CreateRigidbody","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
         {"name":"DestroyRigidbody","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
         {"name":"SetRigidbodyType","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},

@@ -27,7 +27,6 @@ Init(buffer_get_address(shared_buffer));
 world = CreatePhysicsWorld();
 SetPhysicsWorldGravity(world, 0.0, 0.0, -9.81);
 SetPhysicsWorldIterationsSolver(world, 4, 1);
-gravity_down = true;
 
 ground_model = vertex_create_buffer();
 vertex_begin(ground_model, global.format);
@@ -35,15 +34,15 @@ ground_buffer = buffer_create(128 * 128 * 8, buffer_fixed, 8);
 buffer_seek(ground_buffer, buffer_seek_start, 0);
 for(var yy = 0; yy < 128; yy++) {
 	for(var xx = 0; xx < 128; xx++) {
-		var h1 = heightmap_get_pixel(xx, yy) * 0.04;
+		var h1 = heightmap_get_pixel(xx, yy) * 0.12;
 		if (xx % 4 == 0 && yy % 4 == 0) {
 			buffer_write(ground_buffer, buffer_f64, h1);
 		}
 		
 		if (xx < 127 && yy < 127) {
-			var h2 = heightmap_get_pixel(xx + 1, yy) * 0.04;
-			var h3 = heightmap_get_pixel(xx, yy + 1) * 0.04;
-			var h4 = heightmap_get_pixel(xx + 1, yy + 1) * 0.04;
+			var h2 = heightmap_get_pixel(xx + 1, yy) * 0.12;
+			var h3 = heightmap_get_pixel(xx, yy + 1) * 0.12;
+			var h4 = heightmap_get_pixel(xx + 1, yy + 1) * 0.12;
 			
 			vertex_default(ground_model, xx, yy, h1, (xx) / 127, (yy) / 127, random_rgb(170, 255), 1);
 			vertex_default(ground_model, xx + 1 , yy, h2, (xx + 1) / 127, (yy) / 127, random_rgb(170, 255), 1);
@@ -59,14 +58,16 @@ for(var yy = 0; yy < 128; yy++) {
 vertex_end(ground_model);
 vertex_freeze(ground_model);
 
-ground_shape = CreateBoxShape(100, 100, 5); // CreateHeightFieldShape(128 / 4, 128 / 4, 0, 255 * 0.04, buffer_get_address(ground_buffer), HeightDataType.HEIGHT_DOUBLE_TYPE);
-// SetConcaveShapeScale(ground_shape, 4.0, 4.0, 1);
+ground_shape = CreateHeightFieldShape(128 / 4, 128 / 4, 0, 255 * 0.12, buffer_get_address(ground_buffer), HeightDataType.HEIGHT_DOUBLE_TYPE);
+SetConcaveShapeScale(ground_shape, 4.0, 4.0, 1);
 ground_texture = sprite_get_texture(ground_spr, 0);
 ground = CreateRigidbody(world, 0, 0, 0, 0, 0, 0);
 SetRigidbodyType(ground, BodyType.STATIC);
-AddCollider(ground, ground_shape, 0, 0, 0, 0, 0, 0);
+ground_collider = AddCollider(ground, ground_shape, 0, 0, 0, 0, 0, 0);
+SetColliderCollisionCategoryBits(ground_collider, Category.CATEGORY1);
+SetColliderCollideWithMaskBits(ground_collider, Category.CATEGORY2 | Category.CATEGORY3);
 
-cube_count = 4096;
+cube_count = 128;
 box_shape = CreateSphereShape(1);
 box_texture = sprite_get_texture(box_spr, 0)
 box_array =  array_create(cube_count, 0);
@@ -76,7 +77,15 @@ for(var i = 0; i < cube_count; i++) {
 	var dir = 15 + i * 30;
 	var height = 10 + i / 10;
 	var box = CreateRigidbody(world, lengthdir_x(dist, dir), lengthdir_y(dist, dir), height, 0, 0, 0);
-	AddCollider(box, box_shape, 0, 0, 0, 0, 0, 0);
+	var collider = AddCollider(box, box_shape, 0, 0, 0, 0, 0, 0);
+	if (lengthdir_x(dist, dir) < 0) {
+		SetColliderCollisionCategoryBits(collider, Category.CATEGORY2);
+		SetColliderCollideWithMaskBits(collider, Category.CATEGORY1); // | Category.CATEGORY3);
+	} else {
+		SetColliderCollisionCategoryBits(collider, Category.CATEGORY3);
+		SetColliderCollideWithMaskBits(collider, Category.CATEGORY1); // | Category.CATEGORY2);
+	}
+		
 	box_array[i] = box;
 }
 

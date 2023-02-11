@@ -1,7 +1,8 @@
 // Used https://javl.github.io/image2cpp/
 
 function heightmap_get_pixel(tx, ty) {
-	return color_get_blue(global.heightmap_bytes[tx + ty * 128]);
+	return 255 * (abs(tx - 64) / 64);
+	// return color_get_blue(global.heightmap_bytes[tx + ty * 128]);
 }
 
 global.heightmap_bytes = [
