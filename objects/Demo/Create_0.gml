@@ -43,8 +43,8 @@ car_weight = 100.0;
 
 wheel_radius = 0.3;
 wheel_width = 0.3;
-wheel_weight = 15.0;
-wheel_offset_weight = 1.0;
+wheel_weight = 1.0;
+wheel_offset_weight = 15.0;
 
 car_texture = sprite_get_texture(box_spr, 0)
 car_model = model_build_cube(-car_length / 2, -car_width / 2, -car_height / 2, car_length / 2, car_width / 2, car_height / 2);
@@ -57,9 +57,9 @@ wheel_model = model_build_cube(-wheel_radius, -wheel_width / 2, -wheel_radius, w
 wheel_shape = CreateSphereShape(wheel_radius); //, wheel_width);
 
 wheel_front_left_offset_body = CreateRigidbody(world, car_length / 2, -car_width / 2, 1 + wheel_radius);
-wheel_front_right_offset_body = CreateRigidbody(world, world, car_length / 2, car_width / 2, 1 + wheel_radius);
-wheel_back_left_offset_body = CreateRigidbody(world, world, -car_length / 2, -car_width / 2, 1 + wheel_radius);
-wheel_back_right_offset_body = CreateRigidbody(world, world, -car_length / 2, car_width / 2, 1 + wheel_radius);
+wheel_front_right_offset_body = CreateRigidbody(world, car_length / 2, car_width / 2, 1 + wheel_radius);
+wheel_back_left_offset_body = CreateRigidbody(world, -car_length / 2, -car_width / 2, 1 + wheel_radius);
+wheel_back_right_offset_body = CreateRigidbody(world, -car_length / 2, car_width / 2, 1 + wheel_radius);
 
 SetRigidbodyMass(wheel_front_left_offset_body, wheel_offset_weight);
 SetRigidbodyMass(wheel_front_right_offset_body, wheel_offset_weight);
@@ -76,14 +76,8 @@ CreateFixedJoint(world, car_body, wheel_back_right_offset_body, 0, 0, 2);
 wheel_front_left_steer_body = CreateRigidbody(world, car_length / 2, -car_width / 2, 1 + wheel_radius);
 wheel_front_right_steer_body = CreateRigidbody(world, car_length / 2, car_width / 2, 1 + wheel_radius);
 
-wheel_front_left_steer_joint = CreateHingeJoint(world, wheel_front_left_offset_body, wheel_front_left_steer_body, car_length / 2, -car_width / 2, 1 + wheel_radius, 0, 0, 1);
-wheel_front_right_steer_joint = CreateHingeJoint(world, wheel_front_right_offset_body, wheel_front_right_steer_body, car_length / 2, car_width / 2, 1 + wheel_radius, 0, 0, 1);
-
-HingeJointEnableLimit(wheel_front_left_steer_joint, true);
-HingeJointEnableLimit(wheel_front_right_steer_joint, true);
-
-SetHingeJointMinMaxAngleLimit(wheel_front_left_steer_joint, -degtorad(40), degtorad(40));
-SetHingeJointMinMaxAngleLimit(wheel_front_right_steer_joint, -degtorad(40), degtorad(40));
+CreateHingeJoint(world, wheel_front_left_offset_body, wheel_front_left_steer_body, car_length / 2, -car_width / 2, 1 + wheel_radius, 0, 0, 1);
+CreateHingeJoint(world, wheel_front_right_offset_body, wheel_front_right_steer_body, car_length / 2, car_width / 2, 1 + wheel_radius, 0, 0, 1);
 
 wheel_front_left_wheel_body = CreateRigidbody(world, car_length / 2, -car_width / 2, 1 + wheel_radius);
 wheel_front_right_wheel_body = CreateRigidbody(world, car_length / 2, car_width / 2, 1 + wheel_radius);

@@ -53,28 +53,22 @@ if (keyboard_check_pressed(vk_up)) {
 
 if (!keyboard_check(vk_up)) {
 	HingeJointEnableMotor(wheel_back_left_wheel_joint, false);
-	HingeJointEnableMotor(wheel_back_right_wheel_joint, false);
+	HingeJointEnableMotor(wheel_front_right_wheel_body, false);
 }
 
 if (keyboard_check_pressed(vk_left)) {
-	SetHingeJointMotorSpeedTorque(wheel_front_left_steer_joint, 1.0, 500);
-	SetHingeJointMotorSpeedTorque(wheel_front_right_steer_joint, 1.0, 500);
-
-	HingeJointEnableMotor(wheel_front_left_steer_joint, true);
-	HingeJointEnableMotor(wheel_front_right_steer_joint, true);
+	SetTransformRotation(wheel_front_left_wheel_body, 0, 0, -55);
+	SetTransformRotation(wheel_front_right_wheel_body, 0, 0, -55);
 } 
 
 if (keyboard_check_pressed(vk_right)) {
-	SetHingeJointMotorSpeedTorque(wheel_front_left_steer_joint, -1.0, 500);
-	SetHingeJointMotorSpeedTorque(wheel_front_right_steer_joint, -1.0, 500);
-
-	HingeJointEnableMotor(wheel_front_left_steer_joint, true);
-	HingeJointEnableMotor(wheel_front_right_steer_joint, true);
+	SetTransformRotation(wheel_front_left_wheel_body, 0, 0, 55);
+	SetTransformRotation(wheel_front_right_wheel_body, 0, 0, 55);
 } 
 
 if (!keyboard_check(vk_left) && !keyboard_check(vk_right)){
-	HingeJointEnableMotor(wheel_front_left_steer_joint, false);
-	HingeJointEnableMotor(wheel_front_right_steer_joint, false);
+	SetTransformRotation(wheel_front_left_wheel_body, 0, 0, 0);
+	SetTransformRotation(wheel_front_right_wheel_body, 0, 0, 0);
 }
 
 //if(mouse_check_button_pressed(mb_right)) {
