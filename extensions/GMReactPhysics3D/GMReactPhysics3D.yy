@@ -116,6 +116,7 @@
         {"name":"HingeJointEnableMotor","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
         {"name":"SetHingeJointMinMaxAngleLimit","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
         {"name":"HingeJointEnableLimit","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
+      ],"origname":"","ProxyFiles":[],"uncompress":false,"usesRunnerInterface":true,},
   ],
   "gradleinject": "",
   "hasConvertedCodeInjection": true,

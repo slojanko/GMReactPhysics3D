@@ -23,7 +23,8 @@ Init(buffer_get_address(shared_buffer));
 
 world = CreatePhysicsWorld();
 SetPhysicsWorldGravity(world, 0.0, 0.0, -9.81);
-SetPhysicsWorldIterationsSolver(world, 15, 7);
+SetPhysicsWorldIterationsVelocitySolver(world, 10);
+SetPhysicsWorldIterationsPositionSolver(world, 5);
 
 ground_texture = sprite_get_texture(ground_spr, 0);
 ground_model = model_build_cube(-50, -50, -1, 50, 50, 1);
@@ -39,7 +40,7 @@ SetColliderFrictionCoefficient(ground_collider, 1.0);
 car_length = 4.0;
 car_width = 1.8;
 car_height = 1.0;
-car_weight = 1000.0;
+car_weight = 100.0;
 
 wheel_radius = 0.3;
 wheel_width = 0.3;
