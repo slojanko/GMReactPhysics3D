@@ -53,7 +53,7 @@ if (keyboard_check_pressed(vk_up)) {
 
 if (!keyboard_check(vk_up)) {
 	HingeJointEnableMotor(wheel_back_left_wheel_joint, false);
-	HingeJointEnableMotor(wheel_front_right_wheel_body, false);
+	HingeJointEnableMotor(wheel_back_right_wheel_joint, false);
 }
 
 if (keyboard_check_pressed(vk_left)) {
