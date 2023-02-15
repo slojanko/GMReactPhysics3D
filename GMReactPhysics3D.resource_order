@@ -17,10 +17,10 @@
   ],
   "ResourceOrderSettings": [
     {"name":"target_spr","order":1,"path":"sprites/target_spr/target_spr.yy",},
-    {"name":"utils","order":1,"path":"scripts/utils/utils.yy",},
+    {"name":"types","order":1,"path":"scripts/types/types.yy",},
+    {"name":"utils","order":2,"path":"scripts/utils/utils.yy",},
+    {"name":"Demo","order":1,"path":"objects/Demo/Demo.yy",},
     {"name":"GMReactPhysics3D","order":1,"path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
     {"name":"ground_spr","order":3,"path":"sprites/ground_spr/ground_spr.yy",},
-    {"name":"heightmap_spr","order":2,"path":"sprites/heightmap_spr/heightmap_spr.yy",},
-    {"name":"heightmap_utils","order":2,"path":"scripts/heightmap_utils/heightmap_utils.yy",},
   ],
 }

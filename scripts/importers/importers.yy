@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "heightmap_utils",
+  "name": "importers",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

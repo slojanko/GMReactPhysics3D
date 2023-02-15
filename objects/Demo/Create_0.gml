@@ -2,20 +2,6 @@ gpu_set_zwriteenable(true);
 gpu_set_ztestenable(true);
 // show_debug_overlay(true);
 
-view_enabled = true;
-view_set_visible(0, true);
-
-cx = 0;
-cy = 96;
-cz = 25;
-cdir = 0;
-cpitch = 0;
-
-camera = camera_create();
-projMat = matrix_build_projection_perspective_fov(-60, -view_get_wport(0)/view_get_hport(0), 1, 1000);
-camera_set_proj_mat(camera, projMat);
-view_set_camera(0, camera);
-
 // Physics setup
 shared_buffer = buffer_create(65536, buffer_fixed, 1);
 //shared_array = array_create(65536)

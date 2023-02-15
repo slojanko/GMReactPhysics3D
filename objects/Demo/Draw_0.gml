@@ -1,7 +1,3 @@
-var mLookat = matrix_build_lookat(cx, cy, cz, cx + dcos(cdir), cy - dsin(cdir), cz + dtan(cpitch), 0, 0, 1);
-camera_set_view_mat(camera, mLookat);
-camera_apply(camera);
-
 matrix_set(matrix_world, matrix_build(0, 0, 0, 0, 0, 0, 1, 1, 1));
 vertex_submit(ground_model, pr_trianglelist, ground_texture);
 

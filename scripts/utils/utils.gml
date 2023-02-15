@@ -1,11 +1,10 @@
-vertex_format_begin();
-vertex_format_add_position_3d();
-vertex_format_add_texcoord();
-vertex_format_add_color();
-global.format = vertex_format_end();
-
 function random_rgb(min_value, max_value) {
 	return make_color_rgb(irandom_range(min_value, max_value), irandom_range(min_value, max_value), irandom_range(min_value, max_value));
+}
+
+function random_greyscale_rgb(min_value, max_value) {
+	var greyscale = irandom_range(min_value, max_value);
+	return make_color_rgb(greyscale, greyscale, greyscale);
 }
 
 function model_build_cube(x1, y1, z1, x2, y2, z2) {
@@ -77,7 +76,7 @@ function vertex_default(buffer, px, py, pz, tx, ty, c, a) {
 
 	vertex_position_3d(buffer, px, py, pz);
 	vertex_texcoord(buffer, tx, ty);
-	vertex_colour(buffer, c, a);
+	// vertex_colour(buffer, c, a);
 }
 
 function convert_2d_to_3d_cam(camera, _x, _y)
