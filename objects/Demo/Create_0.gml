@@ -26,12 +26,12 @@ SetColliderFrictionCoefficient(ground_collider, 1.0);
 car_length = 4.0;
 car_width = 1.8;
 car_height = 1.0;
-car_weight = 100.0;
+car_weight = 50.0;
 
 wheel_radius = 0.3;
 wheel_width = 0.3;
 wheel_weight = 10.0;
-wheel_offset_weight = 150.0;
+wheel_offset_weight = 50.0;
 
 car_texture = sprite_get_texture(box_spr, 0)
 car_model = model_build_cube(-car_length / 2, -car_width / 2, -car_height / 2, car_length / 2, car_width / 2, car_height / 2);
