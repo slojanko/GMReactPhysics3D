@@ -20,6 +20,7 @@
   "files": [
     {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"","constants":[],"copyToTargets":64,"filename":"GMReactPhysics3D.dll","final":"","functions":[
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"Init","argCount":0,"args":[],"documentation":"","externalName":"","help":"","hidden":false,"kind":1,"returnType":1,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"Test","argCount":0,"args":[],"documentation":"","externalName":"","help":"","hidden":false,"kind":1,"returnType":1,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"CreatePhysicsWorld","argCount":0,"args":[],"documentation":"","externalName":"","help":"","hidden":false,"kind":1,"returnType":1,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"DestroyPhysicsWorld","argCount":0,"args":[],"documentation":"","externalName":"","help":"","hidden":false,"kind":1,"returnType":1,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"UpdatePhysicsWorld","argCount":0,"args":[],"documentation":"","externalName":"","help":"","hidden":false,"kind":1,"returnType":1,},
@@ -73,6 +74,7 @@
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"GetHingeJointAngle","argCount":0,"args":[],"documentation":"","externalName":"","help":"","hidden":false,"kind":1,"returnType":1,},
       ],"init":"","kind":1,"order":[
         {"name":"Init","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
+        {"name":"Test","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
         {"name":"CreatePhysicsWorld","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
         {"name":"DestroyPhysicsWorld","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
         {"name":"UpdatePhysicsWorld","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},

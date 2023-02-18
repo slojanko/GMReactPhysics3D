@@ -1,3 +1,5 @@
+#macro log show_debug_message
+
 function random_rgb(min_value, max_value) {
 	return make_color_rgb(irandom_range(min_value, max_value), irandom_range(min_value, max_value), irandom_range(min_value, max_value));
 }

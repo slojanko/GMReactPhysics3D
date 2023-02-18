@@ -13,4 +13,5 @@ projMat = matrix_build_projection_perspective_fov(-60, -view_get_wport(0)/view_g
 camera_set_proj_mat(camera, projMat);
 view_set_camera(0, camera);
 
-buffer = import_obj("text.obj");
+gpu_set_zwriteenable(true);
+gpu_set_ztestenable(true);

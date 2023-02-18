@@ -1,11 +1,7 @@
-gpu_set_zwriteenable(true);
-gpu_set_ztestenable(true);
-// show_debug_overlay(true);
-
 // Physics setup
 shared_buffer = buffer_create(65536, buffer_fixed, 1);
-//shared_array = array_create(65536)
-Init(buffer_get_address(shared_buffer));
+shared_array = array_create(65536, 0)
+Init(buffer_get_address(shared_buffer), ptr(shared_array));
 
 world = CreatePhysicsWorld();
 SetPhysicsWorldGravity(world, 0.0, 0.0, -9.81);
