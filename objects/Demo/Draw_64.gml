@@ -1,0 +1,1 @@
+draw_text(0, 80, radtodeg(GetHingeJointAngle(wheel_back_left_wheel_joint)));

@@ -4,7 +4,7 @@ vertex_submit(ground_model, pr_trianglelist, ground_texture);
 matrix_set(matrix_world, GetTransformMatrix(car_body));
 vertex_submit(car_model, pr_trianglelist, car_texture);
 
-matrix_set(matrix_world, GetTransformMatrix(wheel_front_left_steer_body));
+matrix_set(matrix_world, GetTransformMatrix(wheel_front_left_wheel_body));
 vertex_submit(wheel_model, pr_trianglelist, car_texture);
 
 matrix_set(matrix_world, GetTransformMatrix(wheel_front_right_wheel_body));

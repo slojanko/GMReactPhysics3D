@@ -1,4 +1,4 @@
-if (!window_has_focus()) {
+if (!window_has_focus() || keyboard_check(vk_space)) {
 	return; 
 }
 
