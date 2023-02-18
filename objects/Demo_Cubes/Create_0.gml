@@ -5,11 +5,11 @@ Init(buffer_get_address(shared_buffer), ptr(shared_array));
 
 world = CreatePhysicsWorld();
 SetPhysicsWorldGravity(world, 0.0, 0.0, -9.81);
-SetPhysicsWorldIterationsVelocitySolver(world, 10);
-SetPhysicsWorldIterationsPositionSolver(world, 5);
+SetPhysicsWorldIterationsVelocitySolver(world, 5);
+SetPhysicsWorldIterationsPositionSolver(world, 3);
 
 ground_texture = sprite_get_texture(ground_spr, 0);
-ground_model = model_build_cube(-150, -150, -1, 150, 150, 1);
+ground_model = import_obj("ground.obj");
 ground_shape = CreateBoxShape(150, 150, 1);
 ground_body = CreateRigidbody(world, 0, 0, 0, 0, 0, 0);
 SetRigidbodyType(ground_body, BodyType.STATIC);
