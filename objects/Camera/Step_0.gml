@@ -19,13 +19,15 @@ if (keyboard_check(ord("D"))) {
 }
 
 if (keyboard_check(ord("W"))) {
-    cx += dcos(cdir) * move_speed;
-    cy -= dsin(cdir) * move_speed;
+    cx += dcos(cdir) * dcos(cpitch) * move_speed;
+    cy -= dsin(cdir) * dcos(cpitch) * move_speed;
+	cz += dsin(cpitch) * move_speed;
 }
 
 if (keyboard_check(ord("S"))) {
-    cx -= dcos(cdir) * move_speed;
-    cy += dsin(cdir) * move_speed;
+    cx -= dcos(cdir) * dcos(cpitch) * move_speed;
+    cy += dsin(cdir) * dcos(cpitch) * move_speed;
+	cz -= dsin(cpitch) * move_speed;
 }
 
 if (keyboard_check(ord("Q"))) {

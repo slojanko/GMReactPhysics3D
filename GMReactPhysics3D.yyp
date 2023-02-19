@@ -38,7 +38,7 @@
     {"id":{"name":"target_spr","path":"sprites/target_spr/target_spr.yy",},"order":1,},
     {"id":{"name":"types","path":"scripts/types/types.yy",},"order":1,},
     {"id":{"name":"utils","path":"scripts/utils/utils.yy",},"order":2,},
-    {"id":{"name":"Demo_Cubes","path":"objects/Demo_Cubes/Demo_Cubes.yy",},"order":1,},
+    {"id":{"name":"Demo_Boxes","path":"objects/Demo_Boxes/Demo_Boxes.yy",},"order":1,},
     {"id":{"name":"GMReactPhysics3D","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},"order":1,},
     {"id":{"name":"Camera","path":"objects/Camera/Camera.yy",},"order":0,},
     {"id":{"name":"importers","path":"scripts/importers/importers.yy",},"order":0,},

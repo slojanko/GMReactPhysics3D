@@ -16,3 +16,4 @@ view_set_camera(0, camera);
 gpu_set_zwriteenable(true);
 gpu_set_ztestenable(true);
 gpu_set_texrepeat(true);
+show_debug_overlay(true);
