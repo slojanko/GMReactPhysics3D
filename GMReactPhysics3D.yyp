@@ -27,8 +27,10 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy","order":8,},
   ],
   "IncludedFiles": [
-    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"text.obj","CopyToMask":-1,"filePath":"datafiles",},
+    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"box.obj","CopyToMask":-1,"filePath":"datafiles",},
+    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"brick.obj","CopyToMask":-1,"filePath":"datafiles",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"ground.obj","CopyToMask":-1,"filePath":"datafiles",},
+    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"text.obj","CopyToMask":-1,"filePath":"datafiles",},
   ],
   "isEcma": false,
   "MetaData": {
@@ -41,10 +43,11 @@
     {"id":{"name":"Demo_Boxes","path":"objects/Demo_Boxes/Demo_Boxes.yy",},"order":1,},
     {"id":{"name":"GMReactPhysics3D","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},"order":1,},
     {"id":{"name":"Camera","path":"objects/Camera/Camera.yy",},"order":0,},
+    {"id":{"name":"forward_shd","path":"shaders/forward_shd/forward_shd.yy",},"order":1,},
     {"id":{"name":"importers","path":"scripts/importers/importers.yy",},"order":0,},
     {"id":{"name":"ground_spr","path":"sprites/ground_spr/ground_spr.yy",},"order":3,},
     {"id":{"name":"box_spr","path":"sprites/box_spr/box_spr.yy",},"order":0,},
-    {"id":{"name":"surface_shd","path":"shaders/surface_shd/surface_shd.yy",},"order":0,},
+    {"id":{"name":"deferred_shd","path":"shaders/deferred_shd/deferred_shd.yy",},"order":0,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
   "RoomOrderNodes": [

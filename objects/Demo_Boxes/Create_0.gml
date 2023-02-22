@@ -5,8 +5,8 @@ Init(buffer_get_address(shared_buffer), ptr(shared_array));
 
 world = CreatePhysicsWorld();
 SetPhysicsWorldGravity(world, 0.0, 0.0, -9.81);
-SetPhysicsWorldIterationsVelocitySolver(world, 4);
-SetPhysicsWorldIterationsPositionSolver(world, 2);
+SetPhysicsWorldIterationsVelocitySolver(world, 10);
+SetPhysicsWorldIterationsPositionSolver(world, 5);
 SetPhysicsWorldEnableSleeping(world, true);
 SetPhysicsWorldTimeBeforeSleep(world, 0.5);
 SetPhysicsWorldSleepLinearVelocity(world, 0.05);
@@ -19,20 +19,21 @@ ground_body = CreateRigidbody(world, 0, 0, 0, 0, 0, 0);
 SetRigidbodyType(ground_body, BodyType.STATIC);
 AddCollider(ground_body, ground_shape, 0, 0, 0, 0, 0, 0);
 
-box_count = 4096;
+box_count = 1024;
 box_texture = sprite_get_texture(box_spr, 0);
-box_model = model_build_cube(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5);
-box_shape = CreateBoxShape(0.5, 0.5, 0.5);
+box_model = import_obj("brick.obj");
+box_shape = CreateBoxShape(2, 1, 0.5);
 box_array = array_create(box_count);
 
 buffer_seek(shared_buffer, buffer_seek_start, 0);
 for(var i = 0; i < box_count; i++) {
-	var dist = random_range(10, 60);
-	var dir = i * 5;
-	var height = 5 + i / 15;
-	var box = CreateRigidbody(world, lengthdir_x(dist, dir), lengthdir_y(dist, dir), height, 0, 0, 0);
+	var dist = 6;
+	var dir = (i % 8) * 45 + (floor(i / 8) % 2) * 22.5;
+	var height = 5 + 0.5 + 1.0 * floor(i / 8);
+	var box = CreateRigidbody(world, lengthdir_x(dist, dir), lengthdir_y(dist, dir), height, 0, 0, degtorad(90 - dir));
 	var collider = AddCollider(box, box_shape, 0, 0, 0, 0, 0, 0);
 	SetColliderBounciness(collider, 0.1);
+	SetRigidbodyIsSleeping(box, true);
 	box_array[i] = box;
 	buffer_write(shared_buffer, buffer_u64, box);
 }
@@ -48,3 +49,6 @@ enum SimulationThread {
 	SEPARATE,
 }
 SimulationThreadToString = ["None", "Runner", "Separate"];
+
+//color_surface = -1;
+//depth_surface = -1;

@@ -21,6 +21,7 @@
     {"name":"utils","order":2,"path":"scripts/utils/utils.yy",},
     {"name":"Demo_Boxes","order":1,"path":"objects/Demo_Boxes/Demo_Boxes.yy",},
     {"name":"GMReactPhysics3D","order":1,"path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
+    {"name":"forward_shd","order":1,"path":"shaders/forward_shd/forward_shd.yy",},
     {"name":"ground_spr","order":3,"path":"sprites/ground_spr/ground_spr.yy",},
   ],
 }
