@@ -1,7 +1,7 @@
 view_enabled = true;
 view_set_visible(0, true);
 
-move_speed = 1;
+base_speed = 1;
 cx = 0;
 cy = 96;
 cz = 25;

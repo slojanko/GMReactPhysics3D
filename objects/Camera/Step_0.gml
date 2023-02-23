@@ -8,6 +8,8 @@ cpitch = clamp(cpitch, -85, 85);
 
 window_mouse_set(window_get_width() / 2, window_get_height() / 2);
 
+var move_speed = base_speed * (1 + 2 * keyboard_check(vk_shift));
+
 if (keyboard_check(ord("A"))) {
     cx -= dsin(cdir) * move_speed;
     cy -= dcos(cdir) * move_speed;
