@@ -46,9 +46,9 @@ last_update_took = 0.0;
 enum SimulationThread {
 	NONE,
 	RUNNER,
-	SEPARATE,
+	ASYNC,
 }
-SimulationThreadToString = ["None", "Runner", "Separate"];
+SimulationThreadToString = ["None", "Runner", "Async"];
 
 //color_surface = -1;
 //depth_surface = -1;

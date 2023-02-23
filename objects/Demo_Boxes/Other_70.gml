@@ -1,4 +1,4 @@
-if (simulation == SimulationThread.SEPARATE) {
+if (simulation == SimulationThread.ASYNC) {
 	updated_once = true;
 	
 	UpdatePhysicsWorldAsyncFinish();

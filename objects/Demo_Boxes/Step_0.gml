@@ -5,7 +5,7 @@ if (simulation == SimulationThread.NONE) {
 	}
 	
 	if (keyboard_check_pressed(ord("2"))) {
-		simulation = SimulationThread.SEPARATE;	
+		simulation = SimulationThread.ASYNC;	
 		last_start = get_timer();
 		UpdatePhysicsWorldAsync(world, 1 / 60);
 	}
