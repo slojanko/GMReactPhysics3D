@@ -18,6 +18,12 @@ gpu_set_texrepeat(true);
 gpu_set_cullmode(cull_noculling);
 
 show_debug_overlay(true);
+//window_set_size(1920, 1080);
+//camera_set_view_size(camera, 1920, 1080);
+//window_set_fullscreen(true);
+//surface_resize(application_surface, 1920, 1080);
+//view_set_wport(0, 1920);
+//view_set_hport(0, 1080);
 
 function RefreshMatrices(shader) {
 	viewMat = matrix_build_lookat(cx, cy, cz, cx + dcos(cdir), cy - dsin(cdir), cz + dtan(cpitch), 0, 0, 1);

@@ -5,8 +5,8 @@ Init(buffer_get_address(shared_buffer), ptr(shared_array));
 
 world = CreatePhysicsWorld();
 SetPhysicsWorldGravity(world, 0.0, 0.0, -9.81);
-SetPhysicsWorldIterationsVelocitySolver(world, 10);
-SetPhysicsWorldIterationsPositionSolver(world, 5);
+SetPhysicsWorldIterationsVelocitySolver(world, 4);
+SetPhysicsWorldIterationsPositionSolver(world, 2);
 SetPhysicsWorldEnableSleeping(world, true);
 SetPhysicsWorldTimeBeforeSleep(world, 0.5);
 SetPhysicsWorldSleepLinearVelocity(world, 0.05);
@@ -19,7 +19,7 @@ ground_body = CreateRigidbody(world, 0, 0, 0, 0, 0, 0);
 SetRigidbodyType(ground_body, BodyType.STATIC);
 AddCollider(ground_body, ground_shape, 0, 0, 0, 0, 0, 0);
 
-box_count = 1024;
+box_count = 1024 + 512;
 box_texture = sprite_get_texture(box_spr, 0);
 box_model = import_obj("brick.obj");
 box_shape = CreateBoxShape(2, 1, 0.5);
