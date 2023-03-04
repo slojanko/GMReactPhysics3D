@@ -1,7 +1,9 @@
 // Physics setup
 shared_buffer = buffer_create(65536, buffer_fixed, 1);
 shared_array = array_create(65536, 0)
+log(typeof(shared_array));
 Init(buffer_get_address(shared_buffer), ptr(shared_array));
+log(typeof(shared_array));
 
 world = CreatePhysicsWorld();
 SetPhysicsWorldGravity(world, 0.0, 0.0, -9.81);
@@ -11,6 +13,7 @@ SetPhysicsWorldEnableSleeping(world, true);
 SetPhysicsWorldTimeBeforeSleep(world, 0.5);
 SetPhysicsWorldSleepLinearVelocity(world, 0.05);
 SetPhysicsWorldSleepLinearVelocity(world, degtorad(5.0));
+SetPhysicsWorldContactPostionCorrectionTechnique(world, ContactsPositionCorrectionTechnique.BAUMGARTE_CONTACTS);
 
 ground_texture = sprite_get_texture(ground_spr, 0);
 ground_model = import_obj("ground.obj");
