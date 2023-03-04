@@ -11,6 +11,17 @@ enum HeightDataType {
 }
 
 // NOT IMPLEMENTED YET
+//enum JointsPositionCorrectionTechnique {
+//	BAUMGARTE_JOINTS = 0,
+//	NON_LINEAR_GAUSS_SEIDEL = 1,
+//}
+
+enum ContactsPositionCorrectionTechnique {
+	BAUMGARTE_CONTACTS = 0,
+	SPLIT_IMPULSES = 1,
+}
+
+// NOT IMPLEMENTED YET
 //enum TriangleRaycastSide {
 //	FRONT = 0,
 //	BACK = 1,
