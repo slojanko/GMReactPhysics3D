@@ -14,7 +14,6 @@ PixelShaderOutput main(PixelShaderInput input)
 	PixelShaderOutput output;
 	
     output.color = gm_BaseTextureObject.Sample(gm_BaseTexture, input.uv);
-	output.color.rgb *= input.brightness;
 	
     return output;
 }

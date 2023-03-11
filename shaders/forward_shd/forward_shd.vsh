@@ -18,12 +18,10 @@ VertexShaderOutput main(VertexShaderInput input)
 {
     VertexShaderOutput output;
 	
-    float4 pos = float4(input.pos, 1.0);
-	pos = mul(gm_Matrices[MATRIX_WORLD_VIEW_PROJECTION], pos);
-    output.pos = pos;
+    output.pos = mul(gm_Matrices[MATRIX_WORLD_VIEW_PROJECTION], float4(input.pos, 1.0));
     output.uv = input.uv;
 	float3 norm = mul(gm_Matrices[MATRIX_WORLD], float4(input.norm, 0.0)).xyz;
-	output.brightness = max(dot(norm, normalize(float3(1.0, 1.0, 1.0))), 0.0) * 1.0 + 0.5;
+	output.brightness = max(dot(norm, normalize(float3(-1.0, 1.0, 1.0))), 0.0) * 1.0 + 0.5;
 	
     return output;
 }
