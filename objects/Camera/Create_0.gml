@@ -17,6 +17,10 @@ gpu_set_zfunc(cmpfunc_lessequal);
 gpu_set_texrepeat(true);
 gpu_set_cullmode(cull_noculling);
 
+gpu_set_tex_mip_enable(mip_on);
+gpu_set_tex_mip_bias(-1);
+gpu_set_tex_mip_filter(tf_linear);
+
 show_debug_overlay(true);
 //window_set_size(1920, 1080);
 //camera_set_view_size(camera, 1920, 1080);
@@ -35,7 +39,15 @@ function RefreshMatrices() {
 	camera_apply(camera);
 }
 
-function RefreshLight(shader) {
-	lightViewMat = matrix_build_lookat(100, 100, 100, 0, 0, 0, 0, 0, 1);
-	shader_set_uniform_matrix_array(shader_get_uniform(shader, "u_mLightViewProj"), lightViewMat);
+function RefreshLight(shader = undefined) {
+	viewMat = matrix_build_lookat(-100, 100, 100, 0, 0, 0, 0, 0, 1);
+	projMat = matrix_build_projection_ortho(356, 356, 1, 1000);
+	
+	if (shader == undefined) {
+		camera_set_view_mat(camera, viewMat);
+		camera_set_proj_mat(camera, projMat);
+		camera_apply(camera);
+	} else {
+		shader_set_uniform_matrix_array(shader_get_uniform(shader, "u_mLightViewProj"), matrix_multiply(viewMat, projMat));
+	}
 }

@@ -1,37 +1,29 @@
-if (!surface_exists(color_surface)) {
-	color_surface = surface_create(window_get_width(), window_get_height(), surface_rgba32float);
-}
-if (!surface_exists(world_pos_surface)) {
-	world_pos_surface = surface_create(window_get_width(), window_get_height(), surface_rgba32float);
-}
-if (!surface_exists(norm_surface)) {
-	norm_surface = surface_create(window_get_width(), window_get_height(), surface_rgba32float);
-}
 if (!surface_exists(depth_surface)) {
-	depth_surface = surface_create(window_get_width(), window_get_height(), surface_rgba32float);
+    depth_surface = surface_create(2048, 2048, surface_r32float);
 }
 
-shader_set(forward_shd);
-//surface_set_target_ext(0, color_surface);
-//surface_set_target_ext(1, world_pos_surface);
-//surface_set_target_ext(2, norm_surface);
-//surface_set_target_ext(3, depth_surface);
+// Get depth
+shader_set(shadow_shd);
+surface_set_target_ext(0, depth_surface);
+draw_clear_alpha(#ffffff, 1.0);
+Camera.RefreshLight();
 
-Camera.RefreshMatrices();
-Camera.RefreshLight(forward_shd);
-draw_clear_alpha(#3366cc, 1.0);
-
-matrix_set(matrix_world, matrix_build(0, 0, 5, 0, 0, 0, 1, 1, 1));
-vertex_submit(ground_model, pr_trianglelist, ground_texture);
-
-if (updated_once) {
-	for(var i = box_count - 1; i >= 0; i--) {
-		matrix_set(matrix_world, shared_array[i]);
-		vertex_submit(box_model, pr_trianglelist, box_texture);
-	}
-}
+draw_scene();
 
 matrix_set(matrix_world, matrix_build_identity());
+surface_reset_target();
+shader_reset();
 
-//surface_reset_target();
+// Do stuff
+shader_set(shadow_forward_shd);
+Camera.RefreshMatrices();
+Camera.RefreshLight(shadow_forward_shd);
+draw_clear_alpha(#3366cc, 1.0);
+
+sampler = shader_get_sampler_index(shadow_forward_shd, "s_depth")
+texture_set_stage(sampler, surface_get_texture(depth_surface));
+
+draw_scene();
+
+matrix_set(matrix_world, matrix_build_identity());
 shader_reset();

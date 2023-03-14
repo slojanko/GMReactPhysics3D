@@ -26,17 +26,17 @@ function import_obj(fileName) {
 			v = 3 * (real(first[0]) - 1);
 			t = 2 * (real(first[1]) - 1);
 			n = 3 * (real(first[2]) - 1);
-			vertex_add(buffer, position[| v], -position[| v + 1], position[| v + 2], texture[| t], texture[| t + 1], normal[| n], -normal[| n + 1], normal[| n + 2]);
+			vertex_add(buffer, position[| v], -position[| v + 1], position[| v + 2], texture[| t], 1.0 - texture[| t + 1], normal[| n], -normal[| n + 1], normal[| n + 2]);
 			
 			v = 3 * (real(second[0]) - 1);
 			t = 2 * (real(second[1]) - 1);
 			n = 3 * (real(second[2]) - 1);
-			vertex_add(buffer, position[| v], -position[| v + 1], position[| v + 2], texture[| t], texture[| t + 1], normal[| n], -normal[| n + 1], normal[| n + 2]);
+			vertex_add(buffer, position[| v], -position[| v + 1], position[| v + 2], texture[| t], 1.0 - texture[| t + 1], normal[| n], -normal[| n + 1], normal[| n + 2]);
 			
 			v = 3 * (real(third[0]) - 1);
 			t = 2 * (real(third[1]) - 1);
 			n = 3 * (real(third[2]) - 1);
-			vertex_add(buffer, position[| v], -position[| v + 1], position[| v + 2], texture[| t], texture[| t + 1], normal[| n], -normal[| n + 1], normal[| n + 2]);
+			vertex_add(buffer, position[| v], -position[| v + 1], position[| v + 2], texture[| t], 1.0 - texture[| t + 1], normal[| n], -normal[| n + 1], normal[| n + 2]);
 		}
 	}
 	

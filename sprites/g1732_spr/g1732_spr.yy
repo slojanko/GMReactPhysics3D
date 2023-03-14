@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": true,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"5409c52b-6780-43c7-a30c-c099f2fc52d7",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"69d1eb3e-d65c-4319-9331-b28a64de0f0d",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 1024,
-  "HTile": false,
+  "HTile": true,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"5fa9cba1-d1a6-4319-a3a1-d86d4173c92f","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"60aa7200-1bf7-4383-adb8-49415fd0d713","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"5409c52b-6780-43c7-a30c-c099f2fc52d7","path":"sprites/g1732_spr/g1732_spr.yy",},},},"Disabled":false,"id":"65c1f3b3-7c43-40fb-a626-a5b895d94f82","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"69d1eb3e-d65c-4319-9331-b28a64de0f0d","path":"sprites/g1732_spr/g1732_spr.yy",},},},"Disabled":false,"id":"15021d8b-f86f-4b60-aac7-af377e410bf1","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -69,6 +69,6 @@
     "path": "texturegroups/Default",
   },
   "type": 0,
-  "VTile": false,
+  "VTile": true,
   "width": 1024,
 }

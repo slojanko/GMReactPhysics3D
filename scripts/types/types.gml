@@ -47,6 +47,23 @@ enum Category {
 	CATEGORY16 = 0x8000,
 }
 
+enum SimulationThread {
+	NONE,
+	RUNNER,
+	ASYNC,
+}
+
+function SimulationThreadToString(type) {
+	switch(type) {
+		case SimulationThread.NONE:
+			return "None";
+		case SimulationThread.RUNNER:
+			return "Runner";
+		case SimulationThread.ASYNC:
+			return "Async";
+	}
+}
+
 vertex_format_begin();
 vertex_format_add_position_3d();
 vertex_format_add_texcoord();

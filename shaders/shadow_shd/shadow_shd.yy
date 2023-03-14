@@ -1,7 +1,7 @@
 {
   "resourceType": "GMShader",
   "resourceVersion": "1.0",
-  "name": "deferred_shd",
+  "name": "shadow_shd",
   "parent": {
     "name": "Shaders",
     "path": "folders/Shaders.yy",

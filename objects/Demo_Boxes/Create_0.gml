@@ -11,7 +11,7 @@ SetPhysicsWorldEnableSleeping(world, true);
 SetPhysicsWorldTimeBeforeSleep(world, 0.5);
 SetPhysicsWorldSleepLinearVelocity(world, 0.05);
 SetPhysicsWorldSleepLinearVelocity(world, degtorad(5.0));
-SetPhysicsWorldContactPostionCorrectionTechnique(world, ContactsPositionCorrectionTechnique.SPLIT_IMPULSES);
+SetPhysicsWorldContactPostionCorrectionTechnique(world, ContactsPositionCorrectionTechnique.BAUMGARTE_CONTACTS);
 
 ground_texture = sprite_get_texture(g987_spr, 0);
 ground_model = import_obj("ground.obj");
@@ -20,7 +20,7 @@ ground_body = CreateRigidbody(world, 0, 0, 0, 0, 0, 0);
 SetRigidbodyType(ground_body, BodyType.STATIC);
 AddCollider(ground_body, ground_shape, 0, 0, 0, 0, 0, 0);
 
-box_count = 1024 + 512 + 512;
+box_count = 1024 + 512;
 box_texture = sprite_get_texture(g1732_spr, 0);
 box_model = import_obj("brick.obj");
 box_shape = CreateBoxShape(2, 1, 0.5);
@@ -44,14 +44,16 @@ updated_once = false;
 last_start = get_timer();
 last_update_took = 0.0;
 
-enum SimulationThread {
-	NONE,
-	RUNNER,
-	ASYNC,
-}
-SimulationThreadToString = ["None", "Runner", "Async"];
-
-color_surface = -1;
-world_pos_surface = -1;
-norm_surface = -1;
 depth_surface = -1;
+
+function draw_scene() {
+	matrix_set(matrix_world, matrix_build(0, 0, 5, 0, 0, 0, 1, 1, 1));
+	vertex_submit(ground_model, pr_trianglelist, ground_texture);
+
+	if (updated_once) {
+		for(var i = box_count - 1; i >= 0; i--) {
+			matrix_set(matrix_world, shared_array[i]);
+			vertex_submit(box_model, pr_trianglelist, box_texture);
+		}
+	}
+}
