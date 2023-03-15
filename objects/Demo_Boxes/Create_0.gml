@@ -40,9 +40,10 @@ for(var i = 0; i < box_count; i++) {
 }
 
 simulation = SimulationThread.NONE;
-updated_once = false;
-last_start = get_timer();
+queued_simulation = SimulationThread.NONE;
+last_update_start = 0.0;
 last_update_took = 0.0;
+updated_once = false;
 
 depth_surface = -1;
 

@@ -21,6 +21,7 @@ gpu_set_tex_mip_enable(mip_on);
 gpu_set_tex_mip_bias(-1);
 gpu_set_tex_mip_filter(tf_linear);
 
+gml_release_mode(true);
 show_debug_overlay(true);
 //window_set_size(1920, 1080);
 //camera_set_view_size(camera, 1920, 1080);
