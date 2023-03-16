@@ -41,10 +41,10 @@
   },
   "resources": [
     {"id":{"name":"target_spr","path":"sprites/target_spr/target_spr.yy",},},
-    {"id":{"name":"Demo_Manager","path":"objects/Demo_Manager/Demo_Manager.yy",},},
+    {"id":{"name":"DemoManager","path":"objects/DemoManager/DemoManager.yy",},},
     {"id":{"name":"types","path":"scripts/types/types.yy",},},
     {"id":{"name":"utils","path":"scripts/utils/utils.yy",},},
-    {"id":{"name":"Demo_Boxes","path":"objects/Demo_Boxes/Demo_Boxes.yy",},},
+    {"id":{"name":"DemoSimulationThread","path":"objects/DemoSimulationThread/DemoSimulationThread.yy",},},
     {"id":{"name":"GMReactPhysics3D","path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},},
     {"id":{"name":"Camera","path":"objects/Camera/Camera.yy",},},
     {"id":{"name":"shadow_forward_shd","path":"shaders/shadow_forward_shd/shadow_forward_shd.yy",},},

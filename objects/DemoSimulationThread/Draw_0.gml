@@ -14,7 +14,7 @@ matrix_set(matrix_world, matrix_build_identity());
 surface_reset_target();
 shader_reset();
 
-// Do stuff
+// Render with shadows
 shader_set(shadow_forward_shd);
 Camera.RefreshMatrices();
 Camera.RefreshLight(shadow_forward_shd);

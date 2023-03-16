@@ -17,10 +17,10 @@
   ],
   "ResourceOrderSettings": [
     {"name":"target_spr","order":2,"path":"sprites/target_spr/target_spr.yy",},
-    {"name":"Demo_Manager","order":3,"path":"objects/Demo_Manager/Demo_Manager.yy",},
+    {"name":"DemoManager","order":1,"path":"objects/DemoManager/DemoManager.yy",},
     {"name":"types","order":1,"path":"scripts/types/types.yy",},
     {"name":"utils","order":2,"path":"scripts/utils/utils.yy",},
-    {"name":"Demo_Boxes","order":2,"path":"objects/Demo_Boxes/Demo_Boxes.yy",},
+    {"name":"DemoSimulationThread","order":2,"path":"objects/DemoSimulationThread/DemoSimulationThread.yy",},
     {"name":"GMReactPhysics3D","order":1,"path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
     {"name":"shadow_forward_shd","order":1,"path":"shaders/shadow_forward_shd/shadow_forward_shd.yy",},
     {"name":"g987_spr","order":1,"path":"sprites/g987_spr/g987_spr.yy",},

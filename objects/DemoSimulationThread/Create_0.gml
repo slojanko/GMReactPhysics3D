@@ -1,8 +1,3 @@
-// Physics setup
-shared_buffer = buffer_create(65536, buffer_fixed, 1);
-shared_array = array_create(65536, 0)
-Init(buffer_get_address(shared_buffer), ptr(shared_array));
-
 world = CreatePhysicsWorld();
 SetPhysicsWorldGravity(world, 0.0, 0.0, -9.81);
 SetPhysicsWorldIterationsVelocitySolver(world, 4);
@@ -26,7 +21,7 @@ box_model = import_obj("brick.obj");
 box_shape = CreateBoxShape(2, 1, 0.5);
 box_array = array_create(box_count);
 
-buffer_seek(shared_buffer, buffer_seek_start, 0);
+buffer_seek(global.shared_buffer, buffer_seek_start, 0);
 for(var i = 0; i < box_count; i++) {
 	var dist = 6;
 	var dir = (i % 8) * 45 + (floor(i / 8) % 2) * 22.5;
@@ -36,7 +31,7 @@ for(var i = 0; i < box_count; i++) {
 	SetColliderBounciness(collider, 0.1);
 	SetRigidbodyIsSleeping(box, true);
 	box_array[i] = box;
-	buffer_write(shared_buffer, buffer_u64, box);
+	buffer_write(global.shared_buffer, buffer_u64, box);
 }
 
 simulation = SimulationThread.NONE;
@@ -53,7 +48,7 @@ function draw_scene() {
 
 	if (updated_once) {
 		for(var i = box_count - 1; i >= 0; i--) {
-			matrix_set(matrix_world, shared_array[i]);
+			matrix_set(matrix_world, global.shared_array[i]);
 			vertex_submit(box_model, pr_trianglelist, box_texture);
 		}
 	}

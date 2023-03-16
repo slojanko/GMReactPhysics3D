@@ -1,0 +1,1 @@
+draw_text(0, 24, "Press Left/Right to switch demos: " + object_get_name(demos[currentDemo]));
