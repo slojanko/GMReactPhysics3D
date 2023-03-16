@@ -23,6 +23,7 @@ gpu_set_tex_mip_filter(tf_linear);
 
 gml_release_mode(true);
 show_debug_overlay(true);
+window_set_cursor(cr_none);
 //window_set_size(1920, 1080);
 //camera_set_view_size(camera, 1920, 1080);
 //window_set_fullscreen(true);
@@ -30,6 +31,8 @@ show_debug_overlay(true);
 //view_set_wport(0, 1920);
 //view_set_hport(0, 1080);
 skip_once = true;
+
+p();
 
 function RefreshMatrices() {
 	viewMat = matrix_build_lookat(cx, cy, cz, cx + dcos(cdir), cy - dsin(cdir), cz + dtan(cpitch), 0, 0, 1);

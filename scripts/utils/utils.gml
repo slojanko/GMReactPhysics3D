@@ -1,14 +1,5 @@
 #macro log show_debug_message
 
-function random_rgb(min_value, max_value) {
-	return make_color_rgb(irandom_range(min_value, max_value), irandom_range(min_value, max_value), irandom_range(min_value, max_value));
-}
-
-function random_greyscale_rgb(min_value, max_value) {
-	var greyscale = irandom_range(min_value, max_value);
-	return make_color_rgb(greyscale, greyscale, greyscale);
-}
-
 function convert_2d_to_3d_cam(camera, _x, _y)
 {
     /*

@@ -29,7 +29,6 @@ for(var i = 0; i < box_count; i++) {
 	var box = CreateRigidbody(world, lengthdir_x(dist, dir), lengthdir_y(dist, dir), height, 0, 0, degtorad(90 - dir));
 	var collider = AddCollider(box, box_shape, 0, 0, 0, 0, 0, 0);
 	SetColliderBounciness(collider, 0.1);
-	SetRigidbodyIsSleeping(box, true);
 	box_array[i] = box;
 	buffer_write(global.shared_buffer, buffer_u64, box);
 }
