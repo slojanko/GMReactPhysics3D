@@ -9,8 +9,6 @@ if (queued_simulation != simulation) {
 }
 
 if (simulation == SimulationThread.ASYNC) {
-	updated_once = true;
-	
 	UpdatePhysicsWorldAsyncFinish();
 	GetTransformMatrixShared(box_count);
 

@@ -21,8 +21,6 @@ if (queued_simulation != simulation) {
 }
 
 if (simulation == SimulationThread.RUNNER) {
-	updated_once = true;
-	
 	last_update_start = get_timer();
 	UpdatePhysicsWorld(world, delta_time / 1000000);
 	GetTransformMatrixShared(box_count);

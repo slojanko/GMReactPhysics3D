@@ -32,8 +32,6 @@ window_set_cursor(cr_none);
 //view_set_hport(0, 1080);
 skip_once = true;
 
-p();
-
 function RefreshMatrices() {
 	viewMat = matrix_build_lookat(cx, cy, cz, cx + dcos(cdir), cy - dsin(cdir), cz + dtan(cpitch), 0, 0, 1);
 	projMat = matrix_build_projection_perspective_fov(-60, -view_get_wport(0)/view_get_hport(0), 1, 1000);

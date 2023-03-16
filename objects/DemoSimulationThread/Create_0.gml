@@ -37,7 +37,7 @@ simulation = SimulationThread.NONE;
 queued_simulation = SimulationThread.NONE;
 last_update_start = 0.0;
 last_update_took = 0.0;
-updated_once = false;
+GetTransformMatrixShared(box_count);
 
 depth_surface = -1;
 
@@ -45,10 +45,8 @@ function draw_scene() {
 	matrix_set(matrix_world, matrix_build(0, 0, 5, 0, 0, 0, 1, 1, 1));
 	vertex_submit(ground_model, pr_trianglelist, ground_texture);
 
-	if (updated_once) {
-		for(var i = box_count - 1; i >= 0; i--) {
-			matrix_set(matrix_world, global.shared_array[i]);
-			vertex_submit(box_model, pr_trianglelist, box_texture);
-		}
+	for(var i = box_count - 1; i >= 0; i--) {
+		matrix_set(matrix_world, global.shared_array[i]);
+		vertex_submit(box_model, pr_trianglelist, box_texture);
 	}
 }
