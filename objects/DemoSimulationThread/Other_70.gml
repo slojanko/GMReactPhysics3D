@@ -1,3 +1,8 @@
+if (queued_destroy) {
+	instance_destroy(self);
+	return;
+}
+
 if (queued_simulation != simulation) {
 	simulation = queued_simulation;	
 	UpdatePhysicsWorldAsyncFinish();

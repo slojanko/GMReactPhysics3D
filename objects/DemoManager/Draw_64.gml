@@ -1,1 +1,1 @@
-draw_text(0, 24, "Use Left/Right to switch demos: " + object_get_name(demos[currentDemo]));
+draw_text(0, 24, "Use Left/Right to switch demos: " + object_get_name(demos[queued_demo]));

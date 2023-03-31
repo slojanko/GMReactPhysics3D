@@ -1,3 +1,10 @@
+if (simulation != SimulationThread.ASYNC) {
+	if (queued_destroy) {
+		instance_destroy(self);
+		return;
+	}
+}
+
 if (keyboard_check_pressed(ord("1"))) {
 	queued_simulation = SimulationThread.NONE;
 }
@@ -20,7 +27,7 @@ if (queued_simulation != simulation) {
 	}
 }
 
-if (simulation == SimulationThread.RUNNER) {
+if (simulation == SimulationThread.RUNNER) {	
 	last_update_start = get_timer();
 	UpdatePhysicsWorld(world, delta_time / 1000000);
 	GetTransformMatrixShared(box_count);

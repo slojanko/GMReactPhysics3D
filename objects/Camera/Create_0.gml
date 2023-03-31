@@ -32,7 +32,7 @@ window_set_cursor(cr_none);
 //view_set_hport(0, 1080);
 skip_once = true;
 
-function RefreshMatrices() {
+function refresh_matrices() {
 	viewMat = matrix_build_lookat(cx, cy, cz, cx + dcos(cdir), cy - dsin(cdir), cz + dtan(cpitch), 0, 0, 1);
 	projMat = matrix_build_projection_perspective_fov(-60, -view_get_wport(0)/view_get_hport(0), 1, 1000);
 	
@@ -41,7 +41,7 @@ function RefreshMatrices() {
 	camera_apply(camera);
 }
 
-function RefreshLight(shader = undefined) {
+function refresh_lights(shader = undefined) {
 	viewMat = matrix_build_lookat(-100, 100, 100, 0, 0, 0, 0, 0, 1);
 	projMat = matrix_build_projection_ortho(356, 356, 1, 1000);
 	

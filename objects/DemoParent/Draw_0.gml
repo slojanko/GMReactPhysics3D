@@ -6,7 +6,7 @@ if (!surface_exists(depth_surface)) {
 shader_set(shadow_shd);
 surface_set_target_ext(0, depth_surface);
 draw_clear_alpha(#ffffff, 1.0);
-Camera.RefreshLight();
+Camera.refresh_lights();
 
 draw_scene();
 
@@ -16,8 +16,8 @@ shader_reset();
 
 // Render with shadows
 shader_set(shadow_forward_shd);
-Camera.RefreshMatrices();
-Camera.RefreshLight(shadow_forward_shd);
+Camera.refresh_matrices();
+Camera.refresh_lights(shadow_forward_shd);
 draw_clear_alpha(#3366cc, 1.0);
 
 sampler = shader_get_sampler_index(shadow_forward_shd, "s_depth")
