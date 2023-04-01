@@ -1,3 +1,5 @@
+UpdatePhysicsWorldAsyncFinish();
+
 if (queued_destroy) {
 	instance_destroy(self);
 	return;
@@ -5,7 +7,6 @@ if (queued_destroy) {
 
 if (queued_simulation != simulation) {
 	simulation = queued_simulation;	
-	UpdatePhysicsWorldAsyncFinish();
 	GetTransformMatrixShared(box_count);
 
 	last_update_took = get_timer() - last_update_start;
@@ -14,7 +15,6 @@ if (queued_simulation != simulation) {
 }
 
 if (simulation == SimulationThread.ASYNC) {
-	UpdatePhysicsWorldAsyncFinish();
 	GetTransformMatrixShared(box_count);
 
 	last_update_took = get_timer() - last_update_start;
