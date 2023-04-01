@@ -3,7 +3,7 @@ global.shared_buffer = buffer_create(65536, buffer_fixed, 1);
 global.shared_array = array_create(65536, 0)
 Init(buffer_get_address(global.shared_buffer), ptr(global.shared_array));
 
-demos = [DemoSimulationThread, DemoRaycast];
+demos = [DemoSimulationThread, DemoRaycast, DemoSlowMotion];
 current_demo = -1;
 queued_demo = 0; 
 

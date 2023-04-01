@@ -8,3 +8,6 @@ queued_destroy = false;
 function destroy() {
 	queued_destroy = true;
 }
+
+function draw_scene() {
+}

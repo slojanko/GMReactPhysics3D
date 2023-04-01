@@ -29,7 +29,7 @@ for(var i = 0; i < box_count; i++) {
 }
 
 GetTransformMatrixShared(box_count);
-hit = { hit : false };
+simulation_speed = 1.0;
 
 function draw_scene() {
 	matrix_set(matrix_world, matrix_build(0, 0, 5, 0, 0, 0, 1, 1, 1));
@@ -38,10 +38,5 @@ function draw_scene() {
 	for(var i = box_count - 1; i >= 0; i--) {
 		matrix_set(matrix_world, global.shared_array[i]);
 		vertex_submit(box_model, pr_trianglelist, box_texture);
-	}
-	
-	if (hit.hit) {
-		matrix_set(matrix_world, matrix_build(hit.px, hit.py, hit.pz, 0, 0, 0, 1, 1, 1));
-		vertex_submit(box_model, pr_trianglelist, sprite_get_texture(target_spr, 0));
 	}
 }

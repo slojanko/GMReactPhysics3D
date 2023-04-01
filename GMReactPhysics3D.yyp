@@ -25,6 +25,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sprites","folderPath":"folders/Sprites.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Demos","folderPath":"folders/Objects/Demos.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"box.obj","CopyToMask":-1,"filePath":"datafiles",},
@@ -42,6 +43,7 @@
   },
   "resources": [
     {"id":{"name":"target_spr","path":"sprites/target_spr/target_spr.yy",},},
+    {"id":{"name":"DemoSlowMotion","path":"objects/DemoSlowMotion/DemoSlowMotion.yy",},},
     {"id":{"name":"DemoManager","path":"objects/DemoManager/DemoManager.yy",},},
     {"id":{"name":"types","path":"scripts/types/types.yy",},},
     {"id":{"name":"utils","path":"scripts/utils/utils.yy",},},
