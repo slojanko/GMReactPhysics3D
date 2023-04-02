@@ -1,6 +1,8 @@
 # GMReactPhysics3D
 
-Demo project using the ReactPhysics3D library, wrapped for GameMaker.
+![Demo](https://github.com/slojanko/GMReactPhysics3D/blob/main/demo.gif?raw=true)
+
+Demo project using the ReactPhysics3D library, wrapped for GameMaker. For a full list of features visit the [GameMaker Community thread](https://forum.gamemaker.io/index.php?threads/gmreactphysics3d-extension-for-the-reactphysics3d-library.101330/).
 
 ## Acknowledgments
 
