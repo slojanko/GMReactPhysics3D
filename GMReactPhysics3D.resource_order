@@ -5,6 +5,7 @@
     {"name":"Fonts","order":6,"path":"folders/Fonts.yy",},
     {"name":"Notes","order":13,"path":"folders/Notes.yy",},
     {"name":"Objects","order":8,"path":"folders/Objects.yy",},
+    {"name":"Demos","order":2,"path":"folders/Objects/Demos.yy",},
     {"name":"Paths","order":3,"path":"folders/Paths.yy",},
     {"name":"Rooms","order":10,"path":"folders/Rooms.yy",},
     {"name":"Scripts","order":4,"path":"folders/Scripts.yy",},
@@ -13,7 +14,6 @@
     {"name":"Sounds","order":2,"path":"folders/Sounds.yy",},
     {"name":"Tile Sets","order":1,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":7,"path":"folders/Timelines.yy",},
-    {"name":"Demos","order":2,"path":"folders/Objects/Demos.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"target_spr","order":2,"path":"sprites/target_spr/target_spr.yy",},
