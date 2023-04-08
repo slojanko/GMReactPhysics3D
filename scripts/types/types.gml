@@ -10,6 +10,16 @@ enum HeightDataType {
 	HEIGHT_INT_TYPE = 2,
 }
 
+enum VertexDataType {
+	VERTEX_FLOAT_TYPE = 0,	
+	VERTEX_DOUBLE_TYPE = 1,
+}
+
+enum IndexDataType {
+	INDEX_INTEGER_TYPE = 0,
+	INDEX_SHORT_TYPE = 1,
+}
+
 // NOT IMPLEMENTED YET
 //enum JointsPositionCorrectionTechnique {
 //	BAUMGARTE_JOINTS = 0,
