@@ -11,16 +11,19 @@ SetPhysicsWorldSleepLinearVelocity(world, degtorad(5.0));
 SetPhysicsWorldContactPostionCorrectionTechnique(world, ContactsPositionCorrectionTechnique.BAUMGARTE_CONTACTS);
 
 ground_texture = sprite_get_texture(g987_spr, 0);
+box_texture = sprite_get_texture(g1732_spr, 0);
+
 ground_model = import_obj("ground.obj");
+box_model = import_obj("brick.obj");
+
 ground_shape = CreateBoxShape(250, 250, 5);
+box_shape = CreateBoxShape(2, 1, 0.5);
+
 ground_body = CreateRigidbody(world, 0, 0, 0, 0, 0, 0);
 SetRigidbodyType(ground_body, BodyType.STATIC);
 AddCollider(ground_body, ground_shape, 0, 0, 0, 0, 0, 0);
 
 box_count = 1024 + 512;
-box_texture = sprite_get_texture(g1732_spr, 0);
-box_model = import_obj("brick.obj");
-box_shape = CreateBoxShape(2, 1, 0.5);
 box_array = array_create(box_count);
 
 buffer_seek(global.shared_buffer, buffer_seek_start, 0);

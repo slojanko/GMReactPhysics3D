@@ -7,10 +7,15 @@ ground_texture = sprite_get_texture(g987_spr, 0);
 box_texture = sprite_get_texture(g1732_spr, 0);
 
 ground_model = import_obj("ground.obj");
-box_model = import_obj("brick.obj");
+box_model = import_obj("tetrahedron.obj");
 
 ground_shape = CreateBoxShape(250, 250, 5);
-box_shape = CreateBoxShape(2, 1, 0.5);
+box_data = import_obj_collision("tetrahedron.obj");
+box_face_array = CreatePolygonFaceArray(box_data.face_count, box_data.vertices_per_face);
+box_vertex_array = CreatePolygonVertexArray(box_data.vertex_count, buffer_get_address(box_data.vertex_buffer), buffer_get_address(box_data.index_buffer), 
+box_data.face_count, box_face_array, VertexDataType.VERTEX_DOUBLE_TYPE, IndexDataType.INDEX_INTEGER_TYPE);
+box_mesh = CreatePolyhedronMesh(box_vertex_array);
+box_shape = CreateConvexMeshShape(box_mesh);
 
 ground_body = CreateRigidbody(world, 0, 0, 0, 0, 0, 0);
 SetRigidbodyType(ground_body, BodyType.STATIC);
@@ -32,7 +37,6 @@ for(var i = 0; i < box_count; i++) {
 }
 
 GetTransformMatrixShared(box_count);
-simulation_speed = 1.0;
 
 function draw_scene() {
 	matrix_set(matrix_world, matrix_build(0, 0, 5, 0, 0, 0, 1, 1, 1));

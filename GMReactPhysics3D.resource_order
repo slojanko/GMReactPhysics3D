@@ -18,6 +18,7 @@
   "ResourceOrderSettings": [
     {"name":"target_spr","order":2,"path":"sprites/target_spr/target_spr.yy",},
     {"name":"DemoSlowMotion","order":3,"path":"objects/DemoSlowMotion/DemoSlowMotion.yy",},
+    {"name":"DemoConvexShape","order":4,"path":"objects/DemoConvexShape/DemoConvexShape.yy",},
     {"name":"DemoManager","order":1,"path":"objects/DemoManager/DemoManager.yy",},
     {"name":"types","order":1,"path":"scripts/types/types.yy",},
     {"name":"utils","order":2,"path":"scripts/utils/utils.yy",},
