@@ -7,10 +7,10 @@ ground_texture = sprite_get_texture(g987_spr, 0);
 box_texture = sprite_get_texture(g1732_spr, 0);
 
 ground_model = import_obj("ground.obj");
-box_model = import_obj("tetrahedron.obj");
+box_model = import_obj("brick_collision.obj");
 
 ground_shape = CreateBoxShape(250, 250, 5);
-box_data = import_obj_collision("tetrahedron.obj");
+box_data = import_obj_collision("brick_collision.obj");
 box_face_array = CreatePolygonFaceArray(box_data.face_count, box_data.vertices_per_face);
 box_vertex_array = CreatePolygonVertexArray(box_data.vertex_count, buffer_get_address(box_data.vertex_buffer), buffer_get_address(box_data.index_buffer), 
 box_data.face_count, box_face_array, VertexDataType.VERTEX_DOUBLE_TYPE, IndexDataType.INDEX_INTEGER_TYPE);

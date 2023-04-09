@@ -20,23 +20,26 @@ function import_obj(filename) {
 		} else if (tokens[0] == "f") {
 			var first = string_split(tokens[1], "/", true);
 			var second = string_split(tokens[2], "/", true);
-			var third = string_split(tokens[3], "/", true);
-			
+				
 			var v, t, n;
-			v = 3 * (real(first[0]) - 1);
-			t = 2 * (real(first[1]) - 1);
-			n = 3 * (real(first[2]) - 1);
-			vertex_add(buffer, position[| v], position[| v + 1], position[| v + 2], texture[| t], texture[| t + 1], normal[| n], normal[| n + 1], normal[| n + 2]);
+			for(var i = 3; i < array_length(tokens); i++) {
+				var third = string_split(tokens[i], "/", true);
+				v = 3 * (real(first[0]) - 1);
+				t = 2 * (real(first[1]) - 1);
+				n = 3 * (real(first[2]) - 1);
+				vertex_add(buffer, position[| v], position[| v + 1], position[| v + 2], texture[| t], texture[| t + 1], normal[| n], normal[| n + 1], normal[| n + 2]);
 			
-			v = 3 * (real(second[0]) - 1);
-			t = 2 * (real(second[1]) - 1);
-			n = 3 * (real(second[2]) - 1);
-			vertex_add(buffer, position[| v], position[| v + 1], position[| v + 2], texture[| t], texture[| t + 1], normal[| n], normal[| n + 1], normal[| n + 2]);
+				v = 3 * (real(second[0]) - 1);
+				t = 2 * (real(second[1]) - 1);
+				n = 3 * (real(second[2]) - 1);
+				vertex_add(buffer, position[| v], position[| v + 1], position[| v + 2], texture[| t], texture[| t + 1], normal[| n], normal[| n + 1], normal[| n + 2]);
 			
-			v = 3 * (real(third[0]) - 1);
-			t = 2 * (real(third[1]) - 1);
-			n = 3 * (real(third[2]) - 1);
-			vertex_add(buffer, position[| v], position[| v + 1], position[| v + 2], texture[| t], texture[| t + 1], normal[| n], normal[| n + 1], normal[| n + 2]);
+				v = 3 * (real(third[0]) - 1);
+				t = 2 * (real(third[1]) - 1);
+				n = 3 * (real(third[2]) - 1);
+				vertex_add(buffer, position[| v], position[| v + 1], position[| v + 2], texture[| t], texture[| t + 1], normal[| n], normal[| n + 1], normal[| n + 2]);
+				second = third;
+			}
 		}
 	}
 	
@@ -53,6 +56,7 @@ function import_obj_collision(filename/*, vertex_type, index_type*/) {
 	var file = file_text_open_read(filename);
 	var position = ds_list_create();
 	var index = ds_list_create();
+	var vertices_per_face = array_create(0);
 	
 	while (!file_text_eof(file))
 	{
@@ -61,17 +65,17 @@ function import_obj_collision(filename/*, vertex_type, index_type*/) {
 		if(tokens[0] == "v") {
 			ds_list_add(position, real(tokens[1]), -real(tokens[2]), real(tokens[3]));
 		} else if (tokens[0] == "f") {
-			var first = string_split(tokens[1], "/", true);
-			var second = string_split(tokens[2], "/", true);
-			var third = string_split(tokens[3], "/", true);
-			//var fourth = string_split(tokens[4], "/", true);
-			ds_list_add(index, real(first[0]) - 1, real(third[0]) - 1, real(second[0]) - 1);
-			//ds_list_add(index, real(second[0]) - 1, real(first[0]) - 1, real(fourth[0]) - 1, real(third[0]) - 1);
+			for(var i = array_length(tokens) - 1; i >= 1; i--) {
+				var first = string_split(tokens[i], "/", true);
+				ds_list_add(index, real(first[0]) - 1);
+			}
+			
+			array_push(vertices_per_face, array_length(tokens) - 1);
 		}
 	}
 	
-	var vertex_buffer = buffer_create(65536, buffer_fixed, 1);
-	var index_buffer = buffer_create(65536, buffer_fixed, 1);
+	var vertex_buffer = buffer_create(ds_list_size(position) * 3 * 8, buffer_fixed, 1);
+	var index_buffer = buffer_create(ds_list_size(index) * 4, buffer_fixed, 1);
 	
 	var count = ds_list_size(position);
 	for(var i = 0; i < count; i++) {
@@ -87,8 +91,8 @@ function import_obj_collision(filename/*, vertex_type, index_type*/) {
 		vertex_buffer : vertex_buffer, 
 		index_buffer : index_buffer,
 		vertex_count : ds_list_size(position) / 3, 
-		face_count : ds_list_size(index) / 3,
-		vertices_per_face : 3,
+		face_count : array_length(vertices_per_face),
+		vertices_per_face : vertices_per_face,
 	};
 	
 	file_text_close(file);
