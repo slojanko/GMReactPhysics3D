@@ -11,8 +11,8 @@ struct PixelShaderOutput {
 };
 
 #define LOOP 8
-#define SHADE 0.7
-#define AMBIENT 0.3
+#define SHADE 0.5
+#define AMBIENT 0.5
 
 static const float2 offsets[LOOP] = {
 	float2(2.0 / 2048, 0.0), 

@@ -13,8 +13,8 @@ struct VertexShaderOutput
 	float3 depth : TEXCOORD2;
 };
 
-#define SHADE 0.7
-#define AMBIENT 0.3
+#define SHADE 0.5
+#define AMBIENT 0.5
 
 uniform float4x4 u_mLightViewProj;
 
