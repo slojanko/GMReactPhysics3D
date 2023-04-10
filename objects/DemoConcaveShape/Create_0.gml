@@ -26,9 +26,9 @@ box_array = array_create(box_count);
 
 buffer_seek(global.shared_buffer, buffer_seek_start, 0);
 for(var i = 0; i < box_count; i++) {
-	var dist = 12;
+	var dist = 22;
 	var dir = (i % 8) * 45 + (floor(i / 8) % 2) * 22.5;
-	var height = 5 + 0.5 + 1.0 * floor(i / 8);
+	var height = 25 + 0.5 + 1.0 * floor(i / 8);
 	var box = CreateRigidbody(world, lengthdir_x(dist, dir), lengthdir_y(dist, dir), height, 0, 0, degtorad(90 - dir));
 	var collider = AddCollider(box, box_shape, 0, 0, 0, 0, 0, 0);
 	SetColliderBounciness(collider, 0.1);
