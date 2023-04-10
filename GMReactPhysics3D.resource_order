@@ -19,6 +19,7 @@
     {"name":"target_spr","order":2,"path":"sprites/target_spr/target_spr.yy",},
     {"name":"DemoSlowMotion","order":3,"path":"objects/DemoSlowMotion/DemoSlowMotion.yy",},
     {"name":"DemoConvexShape","order":4,"path":"objects/DemoConvexShape/DemoConvexShape.yy",},
+    {"name":"DemoConcaveShape","order":5,"path":"objects/DemoConcaveShape/DemoConcaveShape.yy",},
     {"name":"DemoManager","order":1,"path":"objects/DemoManager/DemoManager.yy",},
     {"name":"types","order":1,"path":"scripts/types/types.yy",},
     {"name":"utils","order":2,"path":"scripts/utils/utils.yy",},
@@ -26,7 +27,7 @@
     {"name":"GMReactPhysics3D","order":1,"path":"extensions/GMReactPhysics3D/GMReactPhysics3D.yy",},
     {"name":"shadow_forward_shd","order":1,"path":"shaders/shadow_forward_shd/shadow_forward_shd.yy",},
     {"name":"DemoRaycast","order":2,"path":"objects/DemoRaycast/DemoRaycast.yy",},
+    {"name":"Mulan","order":3,"path":"sprites/Mulan/Mulan.yy",},
     {"name":"g987_spr","order":1,"path":"sprites/g987_spr/g987_spr.yy",},
-    {"name":"shadow_forward_tint_shd","order":2,"path":"shaders/shadow_forward_tint_shd/shadow_forward_tint_shd.yy",},
   ],
 }
