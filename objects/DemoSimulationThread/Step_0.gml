@@ -22,14 +22,14 @@ if (queued_simulation != simulation) {
 		simulation = queued_simulation;	
 		if (simulation == SimulationThread.ASYNC) {
 			last_update_start = get_timer();
-			UpdatePhysicsWorldAsync(world, 1 / 60);
+			UpdatePhysicsWorldAsync(world, delta_time_seconds);
 		}
 	}
 }
 
 if (simulation == SimulationThread.RUNNER) {	
 	last_update_start = get_timer();
-	UpdatePhysicsWorld(world, delta_time / 1000000);
+	UpdatePhysicsWorld(world, delta_time_seconds);
 	GetTransformMatrixShared(box_count);
 	last_update_took = get_timer() - last_update_start;
 }

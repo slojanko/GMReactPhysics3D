@@ -1,4 +1,5 @@
 #macro log show_debug_message
+#macro delta_time_seconds (delta_time/1000000)
 
 function convert_2d_to_3d_cam(camera, _x, _y)
 {

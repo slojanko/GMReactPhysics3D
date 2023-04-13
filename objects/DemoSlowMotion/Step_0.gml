@@ -4,7 +4,7 @@ if (queued_destroy) {
 }
 
 last_update_start = get_timer();
-UpdatePhysicsWorld(world, simulation_speed * delta_time / 1000000);
+UpdatePhysicsWorld(world, simulation_speed * delta_time_seconds);
 GetTransformMatrixShared(box_count);
 last_update_took = get_timer() - last_update_start;
 

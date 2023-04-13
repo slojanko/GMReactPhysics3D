@@ -1,7 +1,8 @@
 view_enabled = true;
 view_set_visible(0, true);
 
-base_speed = 1;
+base_speed = 45;
+base_mouse = 4;
 cx = -100;
 cy = 0;
 cz = 33;
@@ -22,14 +23,14 @@ gpu_set_tex_mip_bias(-1);
 gpu_set_tex_mip_filter(tf_linear);
 
 gml_release_mode(true);
-show_debug_overlay(true);
+//show_debug_overlay(true);
 window_set_cursor(cr_none);
 //window_set_size(1920, 1080);
 //camera_set_view_size(camera, 1920, 1080);
-//window_set_fullscreen(true);
 //surface_resize(application_surface, 1920, 1080);
 //view_set_wport(0, 1920);
 //view_set_hport(0, 1080);
+//window_set_fullscreen(true);
 skip_once = true;
 
 function refresh_matrices() {
